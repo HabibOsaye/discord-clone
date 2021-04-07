@@ -1,0 +1,50 @@
+// Buttons
+
+.btn {
+	display: flex;
+	place-items: center;
+	background: none;
+	padding: 0;
+	border: none;
+	outline: none;
+	height: 32px;
+	width: 32px;
+
+	&:hover {
+		cursor: pointer;
+		// opacity: $opacity;
+	}
+}
+
+.btn-sm {
+	height: 24px;
+	width: 24px;
+}
+
+.btn-round {
+	border-radius: 999px;
+	height: 48px;
+	width: 48px;
+
+	transition: border-radius 200ms ease;
+
+	&:hover {
+		border-radius: 12px;
+	}
+}
+
+.btn-icon {
+	display: block;
+	height: 24px;
+	width: 24px;
+}
+
+.btn-icon-sm {
+	height: 20px;
+	width: 20px;
+}
+
+.btn-icon-xs {
+	height: 16px;
+	width: 16px;
+}
