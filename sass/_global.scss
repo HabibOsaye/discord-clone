@@ -2,6 +2,8 @@
 
 .btn {
 	display: flex;
+	
+	place-content: center;
 	place-items: center;
 	background: none;
 	padding: 0;
@@ -9,10 +11,11 @@
 	outline: none;
 	height: 32px;
 	width: 32px;
+	overflow: hidden;
+	user-select: none;
 
 	&:hover {
 		cursor: pointer;
-		// opacity: $opacity;
 	}
 }
 
@@ -25,11 +28,22 @@
 	border-radius: 999px;
 	height: 48px;
 	width: 48px;
+	color: $accent-green;
+	background-color: $fill-light-grey;
+	margin-bottom: 8px;
+	transition: background-color 150ms ease-out;
 
-	transition: border-radius 200ms ease;
+	.btn-icon {
+		fill: currentColor;
+	}
 
 	&:hover {
-		border-radius: 12px;
+		border-radius: 16px;
+		background-color: currentColor;
+
+		.btn-icon {
+			fill: #fff;
+		}
 	}
 }
 
