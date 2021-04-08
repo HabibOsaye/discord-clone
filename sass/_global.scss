@@ -1,8 +1,9 @@
+// Fonts (Whitney)
+
 // Buttons
 
 .btn {
 	display: flex;
-	
 	place-content: center;
 	place-items: center;
 	background: none;
@@ -42,7 +43,7 @@
 		background-color: currentColor;
 
 		.btn-icon {
-			fill: #fff;
+			fill: #ffffff;
 		}
 	}
 }
@@ -61,4 +62,44 @@
 .btn-icon-xs {
 	height: 16px;
 	width: 16px;
+}
+
+// Hover
+
+.fill-default {
+	fill: currentColor;
+
+	&:hover {
+		fill: currentColor;
+		cursor: pointer;
+	}
+}
+
+ body {
+		/* IE scrollbar styles */
+		scrollbar-base-color: #181818;
+		scrollbar-face-color: #404040;
+		scrollbar-3dlight-color: #181818;
+		scrollbar-highlight-color: #404040;
+		scrollbar-track-color: #181818;
+		scrollbar-arrow-color: #404040;
+		scrollbar-shadow-color: #181818;
+		scrollbar-darkshadow-color: #181818;
+}
+/* Google Chrome (Windows) scrollbar styles */
+::-webkit-scrollbar {
+		width: 20px;
+		background: transparent;
+}
+::-webkit-scrollbar-button {
+		display: none;
+}
+::-webkit-scrollbar-track {
+		background: transparent;
+}
+::-webkit-scrollbar-thumb {
+		border-radius: 100px;
+		background: #aaaaaacc;
+		background-clip: content-box;
+		border: solid 8px transparent;
 }

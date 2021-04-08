@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discord</title>
+  <link rel="shortcut icon" href="/app/assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
@@ -66,15 +67,20 @@
     
     <!-- SERVER PANEL -->
 
-    <aside class="panel" style="display: none;" >
+    <aside class="panel" >
 
         <header class="server-header">
           <div class="server-profile">
-            <div class="server-title">
-                <img src="./app/assets/icons/" alt="Verified" class="btn-icon">
-                <h3 class="server-name">Foundation </h3>
+            <a href="#">
+              <div class="server-title">
+                <svg class="btn-icon-xs btn-partner" xmlns="http://www.w3.org/2000/svg" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2"><path fill-rule="evenodd" d="m16 7.6c0 .79-1.28 1.38-1.52 2.09s.44 2 0 2.59-1.84.35-2.46.8-.79 1.84-1.54 2.09-1.67-.8-2.47-.8-1.75 1-2.47.8-.92-1.64-1.54-2.09-2-.18-2.46-.8.23-1.84 0-2.59-1.54-1.3-1.54-2.09 1.28-1.38 1.52-2.09-.44-2 0-2.59 1.85-.35 2.48-.8.78-1.84 1.53-2.12 1.67.83 2.47.83 1.75-1 2.47-.8.91 1.64 1.53 2.09 2 .18 2.46.8-.23 1.84 0 2.59 1.54 1.3 1.54 2.09z"></path></svg>
+                <h3 class="server-name">Foundation 🌍</h3>
             </div>
-            <img src="./app/assets/icons/" alt="" class="btn-icon-sm">
+            </a>
+
+            <button class="btn btn-sm">
+              <svg class="btn-icon btn-options" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" ><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+            </button>
           </div>
         </header>
 
@@ -83,14 +89,14 @@
           <ul class="panel-room-group">
 
             <div class="room-header">
-              <img src="./app/assets/icons/" alt="" class="btn-icon">
-              <span class="room-title">WELCOME</span>
+              <svg class="btn-icon fill-default" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" ><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+              <span class="room-title fill-default">WELCOME</span>
             </div>
 
             <li class="room-subgroup update">
 
               <div class="room-subgroup-header">
-                <img src="./app/assets/icons/" alt="" class="btn-icon">
+                <img src="./app/assets/icons/" alt="" class="btn-icon btn-icon-xs">
                 <span class="room-subgroup-title">our-guidelines</span>
               </div>
 
