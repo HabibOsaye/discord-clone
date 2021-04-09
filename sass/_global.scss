@@ -1,7 +1,7 @@
 // Scrollbar
 
 body {
-  /* IE scrollbar styles */
+  // IE scrollbar styles
   scrollbar-base-color: #181818;
   scrollbar-face-color: #404040;
   scrollbar-3dlight-color: #181818;
@@ -12,7 +12,7 @@ body {
   scrollbar-darkshadow-color: #181818;
 }
 
-/* Google Chrome (Windows) scrollbar styles */
+// Google Chrome (Windows) scrollbar styles
 ::-webkit-scrollbar {
   width: 20px;
   background: transparent;
@@ -62,8 +62,8 @@ body {
   border-radius: 999px;
   height: 48px;
   width: 48px;
-  color: $accent-green;
-  background-color: $fill-light-grey;
+  color: $primary-green;
+  background-color: $background-grey;
   transition:
     background-color 150ms ease-out;
 
@@ -97,14 +97,45 @@ body {
   width: 16px;
 }
 
-// Hover
+.btn-icon-xxs {
+  height: 14px;
+  width: 14px;
+}
 
-.fill-default {
-  fill: currentColor;
+// .fill-default {
+//   fill: currentColor;
+
+//   &:hover {
+//     fill: currentColor;
+//     cursor: pointer;
+//   }
+// }
+
+.seperator {
+  display: block;
+  background-color: $background-grey;
+  width: 32px;
+  height: 2px;
+  margin-bottom: 8px;
+}
+
+.full-img {
+  height: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-fill-default {
+  color: $icon-default;
+}
+
+.hidden {
 
   &:hover {
-    fill: currentColor;
-    cursor: pointer;
+    .icon-fill-default {
+      color: $text-normal;
+    }
   }
 }
 

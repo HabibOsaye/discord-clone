@@ -29,6 +29,7 @@
         url('Whitney-Medium.woff2') format('woff2'),
         url('Whitney-Medium.woff') format('woff'),
         url('Whitney-Medium.ttf') format('truetype');
+    font-style: normal;
     font-weight: 600;
     font-display: swap;
 }

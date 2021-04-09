@@ -19,21 +19,6 @@ body {
 
 // ***************************************************** //
 
-.seperator {
-  display: block;
-  background-color: $fill-light-grey;
-  width: 32px;
-  height: 2px;
-  margin-bottom: 8px;
-}
-
-.full-img {
-  height: 100%;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-
 //  tooltip (right)
 
 [data-tooltip] {
@@ -73,7 +58,7 @@ body {
     position: absolute;
     display: block;
     content: '';
-    background-color: $fill-black;
+    background-color: $background-black;
     height: 8px;
     width: 8px;
     opacity: 1;
@@ -91,7 +76,7 @@ body {
     color: #fff;
     display: block;
     font-weight: 600;
-    background-color: $fill-black;
+    background-color: $background-black;
     padding: 10px;
     border-radius: 6px;
     line-height: 1;
@@ -123,7 +108,7 @@ body {
 // left navigation
 
 .nav {
-  background-color: $fill-black;
+  background-color: $background-black;
 }
 
 .nav-list {
@@ -203,7 +188,7 @@ body {
 
 .btn-discord {
   &:hover {
-    background-color: $accent-blue;
+    background-color: $primary-blue;
 
     #discord-icon {
       fill: #fff;
@@ -214,8 +199,10 @@ body {
 // server panel
 
 .panel {
-  background-color: $fill-light-grey;
-  color: #fff;
+  background-color: $background-panel-grey;
+  color: #ffffff;
+
+  // position: ;
 }
 
 .server-header {
@@ -235,7 +222,7 @@ body {
   }
 
   .btn-partner {
-    fill: $accent-blue;
+    fill: $primary-blue;
   }
 
   .btn-options {
@@ -259,7 +246,7 @@ body {
     .server-name {
       font-size: 1rem;
       font-weight: 600;
-      text-shadow: 0.5px 0.5px 0.75px $fill-grey;
+      color: #fff;
       line-height: 20px;
       vertical-align: baseline;
       padding-left: 4px;
@@ -276,24 +263,108 @@ body {
 .panel-room {
   display: flex;
   flex-flow: column;
+  padding-right: 8px;
+  padding-top: 18px;
 }
 
 .panel-room-group {
   display: flex;
   flex-flow: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .room-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   text-transform: uppercase;
-  color: $text-normal;
-  padding-left: 4px;
+  color: $text-default;
+  width: 100%;
+  padding-left: 2px;
+  margin-bottom: 4px;
+
+  // background-color: rgb(41, 0, 0);
+
+  &:hover {
+    cursor: pointer;
+    color: $text-normal;
+  }
 
   .room-title {
     font-size: map-get($font-size, small);
     font-weight: 600;
+  }
+}
+
+.room-subgroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  width: 100%;
+  padding-left: 8px;
+  margin-bottom: 2px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: 4px;
+    color: $text-default;
+    font-style: medium;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: $text-normal;
+      background-color: $hover-fill;
+    }
+  }
+}
+
+.room-subgroup-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .room-subgroup-title {
+    margin-left: 8px;
+  }
+}
+
+// room-subgroup - active | update
+
+.room-subgroup {
+
+  &.active {
+
+    .container {
+      color: $text-normal;
+      background-color: $hover-fill;
+    }
+  }
+
+  &.update {
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+
+      height: 8px;
+      width: 4px;
+      background-color: #fff;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .container {
+      color: #fff;
+    }
   }
 }
