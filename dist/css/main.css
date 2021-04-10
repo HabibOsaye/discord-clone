@@ -48,6 +48,11 @@ table {
   border-spacing: 0;
 }
 
+span {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   scrollbar-base-color: #181818;
   scrollbar-face-color: #404040;
@@ -167,6 +172,9 @@ body {
 }
 
 .icon-fill-default {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   color: #72767d;
 }
 
@@ -373,7 +381,7 @@ body {
   height: 132px;
   background-color: black;
   background-image: url("/app/assets/img/background.jpg");
-  background-position: center;
+  background-position: top;
   background-size: 100% auto;
   background-repeat: no-repeat;
   -webkit-user-select: none;
@@ -385,18 +393,31 @@ body {
 .server-header a {
   text-decoration: none;
   color: currentColor;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
-.server-header .btn-partner {
-  fill: #6f85d2;
+.server-header .partner-badge {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.server-header .partner-badge .icon-partner-badge-base {
+  width: 16px;
+  height: 16px;
+  color: #6f85d2;
+}
+
+.server-header .partner-badge .icon-partner-badge-top {
+  position: absolute;
+  width: 14px;
+  z-index: 1;
 }
 
 .server-header .btn-options {
-  fill: #dcddde;
+  color: #dcddde;
 }
 
 .server-profile {
@@ -466,6 +487,7 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .room-header {
@@ -479,7 +501,7 @@ body {
   color: #8e9297;
   width: 100%;
   padding-left: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .room-header:hover {
@@ -490,6 +512,7 @@ body {
 .room-header .room-title {
   font-size: 0.75rem;
   font-weight: 600;
+  padding-left: 2px;
 }
 
 .room-subgroup {
@@ -513,22 +536,32 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
   height: 32px;
   padding: 0 8px;
+  padding-right: 6px;
   border-radius: 4px;
   color: #8e9297;
-  font-style: medium;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 500;
   text-decoration: none;
+}
+
+.room-subgroup .container .hidden {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  visibility: hidden;
+  justify-self: flex-end;
 }
 
 .room-subgroup .container:hover {
   color: #dcddde;
   background-color: #393C43;
+}
+
+.room-subgroup .container:hover .hidden {
+  visibility: visible;
 }
 
 .room-subgroup-header {
@@ -539,15 +572,27 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .room-subgroup-header .room-subgroup-title {
-  margin-left: 8px;
+  font-size: 1rem;
+  margin-left: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .room-subgroup.active .container {
   color: #dcddde;
   background-color: #393C43;
+}
+
+.room-subgroup.active .container .hidden {
+  visibility: visible;
 }
 
 .room-subgroup.update::after {

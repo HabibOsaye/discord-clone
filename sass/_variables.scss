@@ -1,4 +1,5 @@
 // Colors
+
 $background-black: #202225;
 $background-grey: #36393f;
 
@@ -16,9 +17,27 @@ $primary-orange: #faa61a;
 $accent-green-alt: #22ab92;
 
 
+// text
+
 $text-link: #0b9ac9;
 $text-normal: #dcddde;
 $text-default: #8e9297;
+
+
+$text-link_: #fff;
+$text-default_: #fff;
+$text-normal_: #fff;
+$text-default_: #fff;
+
+
+// icon states
+
+$state-default: #fff;
+$state-normal: #fff;
+$state-active: #fff;
+$state-hover: #fff;
+
+// background
 
 $hover-fill: #393C43;
 
@@ -34,4 +53,4 @@ $font-size: (
 // Units
 
 $opacity: 0.54;
-$lineHeight: 1.1rem;
+$lineHeight: 1rem;
