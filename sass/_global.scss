@@ -64,8 +64,7 @@ body {
   width: 48px;
   color: $primary-green;
   background-color: $background-grey;
-  transition:
-    background-color 150ms ease-out;
+  transition: background-color 150ms ease-out;
 
   .btn-icon {
     fill: currentColor;
@@ -74,6 +73,10 @@ body {
   &:hover {
     border-radius: 16px;
     background-color: currentColor;
+
+    &.server {
+      background-color: transparent;
+    }
 
     .btn-icon {
       fill: #ffffff;
@@ -101,15 +104,6 @@ body {
   height: 14px;
   width: 14px;
 }
-
-// .fill-default {
-//   fill: currentColor;
-
-//   &:hover {
-//     fill: currentColor;
-//     cursor: pointer;
-//   }
-// }
 
 .seperator {
   display: block;

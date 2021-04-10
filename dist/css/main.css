@@ -131,6 +131,10 @@ body {
   background-color: currentColor;
 }
 
+.btn-round:hover.server {
+  background-color: transparent;
+}
+
 .btn-round:hover .btn-icon {
   fill: #ffffff;
 }
@@ -243,12 +247,12 @@ body {
   height: 8px;
   width: 8px;
   opacity: 1;
+  left: calc(100% + 4px);
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  left: calc(100% + 4px);
 }
 
 [data-tooltip]:hover::after {
@@ -264,8 +268,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   white-space: nowrap;
-  left: calc(100% + 8px);
   opacity: 1;
+  left: calc(100% + 8px);
   transform: scale(100%);
   -webkit-transform: scale(100%);
   -moz-transform: scale(100%);
@@ -306,8 +310,10 @@ body {
   padding: 12px;
 }
 
-.nav-list .nav-list-item {
+.nav-list-item {
   margin-bottom: 8px;
+  -webkit-transition: all none;
+  transition: all none;
 }
 
 .nav-list-item .item-status {
@@ -318,6 +324,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all none;
+  transition: all none;
 }
 
 .nav-list-item .item-status .indicator {
@@ -360,7 +368,6 @@ body {
 
 #discord-icon {
   color: #dcddde;
-  fill: currentColor;
 }
 
 .btn-discord:hover {
@@ -368,7 +375,7 @@ body {
 }
 
 .btn-discord:hover #discord-icon {
-  fill: #fff;
+  color: #fff;
 }
 
 .panel {
@@ -458,9 +465,9 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .panel-room {
@@ -523,10 +530,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  line-height: 1;
   width: 100%;
+  line-height: 20px;
+  padding: 1px 0;
   padding-left: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .room-subgroup .container {
@@ -536,12 +544,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #8e9297;
   width: 100%;
-  height: 32px;
+  height: 34px;
   padding: 0 8px;
   padding-right: 6px;
   border-radius: 4px;
-  color: #8e9297;
   font-style: normal;
   font-weight: 500;
   text-decoration: none;
@@ -572,7 +580,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -581,7 +589,7 @@ body {
 .room-subgroup-header .room-subgroup-title {
   font-size: 1rem;
   margin-left: 6px;
-  overflow: hidden;
+  overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
