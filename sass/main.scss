@@ -35,7 +35,7 @@ body {
 // ***************************************************** //
 
 
-//  tooltip (visible right)
+//  tooltip nav (right position)
 
 [data-tooltip] {
 
@@ -65,8 +65,6 @@ body {
 }
 
 [data-tooltip]:hover {
-  height: 48px;
-  width: 48px;
   display: flex;
   align-items: center;
 
@@ -88,18 +86,167 @@ body {
 
   &::after {
     position: absolute;
-    content: attr(data-tooltip);
-    color: #fff;
     display: block;
-    font-weight: 600;
+    content: attr(data-tooltip);
+    color: $text-normal;
+    font-size: font-size(default);
+    font-weight: font-weight(semibold);
+    line-height: 1;
     background-color: #18191c;
     padding: 10px;
-    border-radius: 6px;
-    line-height: 1;
     box-sizing: border-box;
+    border-radius: 6px;
     white-space: nowrap;
     opacity: 1;
     left: calc(100% + 8px);
+    transform: scale(100%);
+    -webkit-transform: scale(100%);
+    -moz-transform: scale(100%);
+    -o-transform: scale(100%);
+    -ms-transform: scale(100%);
+  }
+}
+
+// data-tooltip-btn (top position)
+
+[data-tooltip-btn] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    z-index: 10;
+    transition: all 50ms ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    z-index: 10;
+    transform: scale(20%);
+    -webkit-transform: scale(20%);
+    -moz-transform: scale(20%);
+    -o-transform: scale(20%);
+    -ms-transform: scale(20%);
+    transition:
+      opacity 50ms ease-out,
+      transform 50ms cubic-bezier(.57, -0.3, .38, 1.32);
+  }
+}
+
+[data-tooltip-btn]:hover {
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: #18191c;
+    height: 8px;
+    width: 8px;
+    opacity: 1;
+    bottom: calc(100% + -3px);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: attr(data-tooltip-btn);
+    color: $text-normal;
+    font-size: font-size(medium);
+    font-weight: font-weight(semibold);
+    line-height: 1;
+    background-color: #18191c;
+    padding: 9px 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    opacity: 1;
+    bottom: calc(100% + 1px);
+    transform: scale(100%);
+    -webkit-transform: scale(100%);
+    -moz-transform: scale(100%);
+    -o-transform: scale(100%);
+    -ms-transform: scale(100%);
+  }
+}
+
+// data-tooltip-btn | audio room (top position)
+
+[data-tooltip-test] {
+  // position: relative !important;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: all 50ms ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transform: scale(20%);
+    -webkit-transform: scale(20%);
+    -moz-transform: scale(20%);
+    -o-transform: scale(20%);
+    -ms-transform: scale(20%);
+    transition:
+      opacity 50ms ease-out,
+      transform 50ms cubic-bezier(.57, -0.3, .38, 1.32);
+  }
+}
+
+[data-tooltip-test]:hover {
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: #18191c;
+    height: 8px;
+    width: 8px; 
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + -3px);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: attr(data-tooltip-btn);
+    color: $text-normal;
+    font-size: font-size(medium);
+    font-weight: font-weight(semibold);
+    line-height: 1;
+    background-color: #18191c;
+    padding: 9px 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 1px);
     transform: scale(100%);
     -webkit-transform: scale(100%);
     -moz-transform: scale(100%);
@@ -232,25 +379,6 @@ body {
     color: currentColor;
   }
 
-  // .partner-badge {
-  //   position: relative;
-  //   display: flex;
-  //   place-items: center;
-  //   place-content: center;
-
-  //   .icon-partner-badge-base {
-  //     width: 16px;
-  //     height: 16px;
-  //     color: $primary-blue;
-  //   }
-
-  //   .icon-partner-badge-top {
-  //     position: absolute;
-  //     width: 14px;
-  //     z-index: 1;
-  //   }
-  // }
-
   .btn-options {
     color: $text-normal;
   }
@@ -263,7 +391,7 @@ body {
   padding-left: 12px;
   padding-right: 14px;
   color: #fff;
-  text-shadow: 0 1px 1px rgba(0,0,0,.8);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .8);
 
   .server-title {
     @include flex-center(row);
@@ -289,14 +417,14 @@ body {
   flex-flow: column;
   padding-right: 8px;
   padding-top: 18px;
-}
 
-.panel-room-group {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  width: 100%;
-  margin-bottom: 20px;
+  .panel-room-group {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .room-header {
@@ -326,9 +454,8 @@ body {
   align-items: center;
   width: 100%;
   line-height: 20px;
-  padding: 1px 0;
   padding-left: 8px;
-  margin-bottom: 1px;
+  margin-bottom: 1.5px;
 
   .container {
     display: flex;
@@ -344,7 +471,7 @@ body {
     text-decoration: none;
 
     .hidden {
-      flex: 0 0 auto;
+      flex: none;
       visibility: hidden;
       justify-self: flex-end;
     }
@@ -381,7 +508,6 @@ body {
 
 .room-subgroup {
 
-
   .hidden {
 
     .icon-fill-default {
@@ -398,7 +524,7 @@ body {
   &.active {
 
     .container {
-      background-color: $background-hover-fill;
+      background-color: $background-active-fill;
 
       .hidden {
         visibility: visible;
@@ -412,7 +538,6 @@ body {
       position: absolute;
       display: block;
       content: '';
-
       height: 8px;
       width: 4px;
       background-color: #fff;
@@ -426,4 +551,141 @@ body {
       color: #fff;
     }
   }
+}
+
+
+.panel-room .panel-room-group:last-child .room-subgroup:last-child {
+
+  // background-color: black;
+
+  .room-subgroup-header {
+    // background-color: orangered;
+
+    .room-subgroup-title {
+      // background-color: palevioletred;
+    }
+  }
+}
+
+.panel-room .panel-room-group:last-child .room-subgroup:nth-child(3) {
+
+  // background-color: rebeccapurple;
+  // border: 1px solid red;
+}
+
+
+// room audio
+
+.room-audio {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  top: 100%;
+  right: 0;
+  margin-top: 1px;
+  padding-left: 36px;
+
+  .room-audio-item {
+    padding: 0;
+    height: 30px;
+    border-radius: 4px;
+    margin: 2px 0;
+  }
+
+  .item {
+    @include flex-center(row);
+    font-size: font-size(medium);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 8px;
+    text-decoration: none;
+
+    .profile {
+      @include flex-center(row);
+      overflow-x: hidden;
+
+      .profile-title {
+        font-weight: font-weight(medium);
+        color: $channel-default;
+        line-height: 20px;
+        text-decoration: none;
+        padding-left: 8px;
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        flex: 0 1 auto;
+      }
+    }
+
+    // room-audio-item - active | update
+
+    .hidden {
+      @include flex-center(row);
+      flex-wrap: nowrap;
+      margin-left: 4px;
+
+      .mute {
+        color: $channel-default;
+        display: none;
+      }
+
+      .deafen {
+        color: $channel-default;
+        display: none;
+      }
+
+      .live {
+        @include flex-center(row);
+        display: none;
+        color: #fff;
+        font-size: font-size(small);
+        font-weight: font-weight(semibold);
+        line-height: 16px;
+        vertical-align: baseline;
+        text-transform: uppercase;
+        background-color: $secondary-red;
+        height: 16px;
+        padding: 2px 6px;
+        border-radius: 999px;
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .room-audio-item {
+
+    &:hover {
+      background-color: $background-hover-fill;
+
+      .profile-title {
+        color: $text-normal;
+      }
+    }
+  }
+
+  .room-audio-item {
+
+    &.mute {
+      .hidden .mute {
+        display: block;
+      }
+    }
+
+    &.deafen {
+      .hidden .deafen {
+        display: block;
+      }
+    }
+
+    &.live {
+      .hidden .live {
+        display: flex;
+
+      }
+    }
+
+  }
+
 }

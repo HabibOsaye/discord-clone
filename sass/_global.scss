@@ -33,7 +33,7 @@ body {
   border: solid 8px transparent;
 }
 
-// Buttons
+// btn
 
 .btn {
   display: flex;
@@ -47,6 +47,7 @@ body {
   width: 32px;
   overflow: hidden;
   user-select: none;
+  flex: none;
 
   &:hover {
     cursor: pointer;
@@ -58,12 +59,20 @@ body {
   width: 24px;
 }
 
+.btn-xs {
+  height: 20px;
+  width: 20px;
+}
+
+// nav btn (server)
+
 .btn-round {
   border-radius: 999px;
   height: 48px;
   width: 48px;
   color: $primary-green;
   background-color: $background-grey;
+  flex: none;
   transition: background-color 150ms ease-out;
 
   .btn-icon {
@@ -84,7 +93,12 @@ body {
   }
 }
 
+// icon
+
 .btn-icon {
+  display: flex;
+  place-content: center;
+  place-items: center;
   display: block;
   height: 24px;
   width: 24px;
@@ -105,6 +119,37 @@ body {
   width: 14px;
 }
 
+.icon-profile {
+  position: relative;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  background-color: $background-grey;
+  border-radius: 999px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  &.icon-profile-hover {
+    opacity: 0.75;
+  }
+}
+
+.icon-profile-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-fill-default {
+  flex: none;
+  color: $icon-state-default;
+}
+
+// spacers 
+
 .seperator {
   display: block;
   background-color: $background-hover-fill;
@@ -113,6 +158,24 @@ body {
   margin-bottom: 8px;
 }
 
+.seperator-hrt {
+  display: block;
+  background-color: $background-hover-fill;
+  width: 32px;
+  height: 2px;
+  margin-bottom: 8px;
+}
+
+.seperator-vrt {
+  display: block;
+  background-color: $background-hover-fill;
+  width: 2px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+// images
+
 .full-img {
   height: 100%;
   display: block;
@@ -120,9 +183,22 @@ body {
   margin: 0;
 }
 
-.icon-fill-default {
-  flex: 0 0 auto;
-  color: $icon-state-default;
-}
 
-// Tooltip
+// .partner-badge {
+//   position: relative;
+//   display: flex;
+//   place-items: center;
+//   place-content: center;
+
+//   .icon-partner-badge-base {
+//     width: 16px;
+//     height: 16px;
+//     color: $primary-blue;
+//   }
+
+//   .icon-partner-badge-top {
+//     position: absolute;
+//     width: 14px;
+//     z-index: 1;
+//   }
+// }
