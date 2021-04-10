@@ -107,7 +107,7 @@ body {
 
 .seperator {
   display: block;
-  background-color: $background-grey;
+  background-color: $background-hover-fill;
   width: 32px;
   height: 2px;
   margin-bottom: 8px;
@@ -122,16 +122,7 @@ body {
 
 .icon-fill-default {
   flex: 0 0 auto;
-  color: $icon-default;
-}
-
-.hidden {
-
-  &:hover {
-    .icon-fill-default {
-      color: $text-normal;
-    }
-  }
+  color: $icon-state-default;
 }
 
 // Tooltip

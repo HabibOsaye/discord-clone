@@ -1,56 +1,66 @@
-// Colors
+// color
 
 $background-black: #202225;
 $background-grey: #36393f;
-
-
 $background-panel-grey: #2f3136;
 
-$icon-default: #72767d;
-
-$primary-green: #43b581;
-$primary-purple: #8257af;
 $primary-blue: #6f85d2;
-$primary-red: #f04747;
-$primary-orange: #faa61a;
+$primary-green: #43b581;
 
-$accent-green-alt: #22ab92;
+$secondary-green: #22ab92;
+$secondary-purple: #8257af;
+$secondary-red: #f04747;
+$secondary-orange: #faa61a;
 
 
 // text
 
 $text-link: #0b9ac9;
 $text-normal: #dcddde;
-$text-default: #8e9297;
+$text-active: #fff;
+$channel-default: #8e9297;
+
+// icon
+
+$icon-state-default: #72767d;
+$icon-state-normal: #b9bbbe;
+$icon-state-hover: #dcddde;
+$icon-state-active: #fff;
+
+// hover
+
+$background-hover-fill: rgba(79,84,92,0.32);
 
 
-$text-link_: #fff;
-$text-default_: #fff;
-$text-normal_: #fff;
-$text-default_: #fff;
 
-
-// icon states
-
-$state-default: #fff;
-$state-normal: #fff;
-$state-active: #fff;
-$state-hover: #fff;
-
-// background
-
-$hover-fill: #393C43;
-
-// Fonts
+// font-size
 
 $font-size: (
 	"default": 16px,
-	"large": 1.2rem,
-	"medium": 0.875rem,
-	"small": 0.75rem,
+  "large": 1.2rem,
+  "medium": 0.875rem,
+  "small": 0.75rem,
 );
 
-// Units
+@function font-size($size-name) {
+  @return map-get($font-size, $size-name);
+}
+
+// font-weight
+$font-weight: (
+	"light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+);
+
+@function font-weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}
+
+// unit
 
 $opacity: 0.54;
-$lineHeight: 1rem;
+
+$shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
