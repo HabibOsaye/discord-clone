@@ -1,37 +1,37 @@
 // Scrollbar
 
-body {
-  // IE scrollbar styles
-  scrollbar-base-color: #181818;
-  scrollbar-face-color: #404040;
-  scrollbar-3dlight-color: #181818;
-  scrollbar-highlight-color: #404040;
-  scrollbar-track-color: #181818;
-  scrollbar-arrow-color: #404040;
-  scrollbar-shadow-color: #181818;
-  scrollbar-darkshadow-color: #181818;
-}
+// body {
+//   // IE scrollbar styles
+//   scrollbar-base-color: #181818;
+//   scrollbar-face-color: #404040;
+//   scrollbar-3dlight-color: #181818;
+//   scrollbar-highlight-color: #404040;
+//   scrollbar-track-color: #181818;
+//   scrollbar-arrow-color: #404040;
+//   scrollbar-shadow-color: #181818;
+//   scrollbar-darkshadow-color: #181818;
+// }
 
-// Google Chrome (Windows) scrollbar styles
-::-webkit-scrollbar {
-  width: 20px;
-  background: transparent;
-}
+// // Google Chrome (Windows) scrollbar styles
+// ::-webkit-scrollbar {
+//   width: 20px;
+//   background: transparent;
+// }
 
-::-webkit-scrollbar-button {
-  display: none;
-}
+// ::-webkit-scrollbar-button {
+//   display: none;
+// }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 100px;
-  background: #aaaaaacc;
-  background-clip: content-box;
-  border: solid 8px transparent;
-}
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 100px;
+//   background: #aaaaaacc;
+//   background-clip: content-box;
+//   border: solid 8px transparent;
+// }
 
 // btn
 
@@ -62,35 +62,6 @@ body {
 .btn-xs {
   height: 20px;
   width: 20px;
-}
-
-// nav btn (server)
-
-.btn-round {
-  border-radius: 999px;
-  height: 48px;
-  width: 48px;
-  color: $primary-green;
-  background-color: $background-grey;
-  flex: none;
-  transition: background-color 150ms ease-out;
-
-  .btn-icon {
-    fill: currentColor;
-  }
-
-  &:hover {
-    border-radius: 16px;
-    background-color: currentColor;
-
-    &.server {
-      background-color: transparent;
-    }
-
-    .btn-icon {
-      fill: #ffffff;
-    }
-  }
 }
 
 // icon

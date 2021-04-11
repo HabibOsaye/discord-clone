@@ -53,37 +53,6 @@ span {
   margin: 0;
 }
 
-body {
-  scrollbar-base-color: #181818;
-  scrollbar-face-color: #404040;
-  scrollbar-3dlight-color: #181818;
-  scrollbar-highlight-color: #404040;
-  scrollbar-track-color: #181818;
-  scrollbar-arrow-color: #404040;
-  scrollbar-shadow-color: #181818;
-  scrollbar-darkshadow-color: #181818;
-}
-
-::-webkit-scrollbar {
-  width: 20px;
-  background: transparent;
-}
-
-::-webkit-scrollbar-button {
-  display: none;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 100px;
-  background: #aaaaaacc;
-  background-clip: content-box;
-  border: solid 8px transparent;
-}
-
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,36 +87,6 @@ body {
 .btn-xs {
   height: 20px;
   width: 20px;
-}
-
-.btn-round {
-  border-radius: 999px;
-  height: 48px;
-  width: 48px;
-  color: #43b581;
-  background-color: #36393f;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  -webkit-transition: background-color 150ms ease-out;
-  transition: background-color 150ms ease-out;
-}
-
-.btn-round .btn-icon {
-  fill: currentColor;
-}
-
-.btn-round:hover {
-  border-radius: 16px;
-  background-color: currentColor;
-}
-
-.btn-round:hover.server {
-  background-color: transparent;
-}
-
-.btn-round:hover .btn-icon {
-  fill: #ffffff;
 }
 
 .btn-icon {
@@ -410,83 +349,6 @@ body {
   -ms-transform: scale(100%);
 }
 
-[data-tooltip-test] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-[data-tooltip-test]::before {
-  position: absolute;
-  content: '';
-  opacity: 0;
-  visibility: hidden;
-  z-index: 10;
-  -webkit-transition: all 50ms ease;
-  transition: all 50ms ease;
-}
-
-[data-tooltip-test]::after {
-  position: absolute;
-  content: '';
-  opacity: 0;
-  visibility: hidden;
-  z-index: 10;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
-  -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32), -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-}
-
-[data-tooltip-test]:hover::before {
-  position: absolute;
-  display: block;
-  content: '';
-  background-color: #18191c;
-  height: 8px;
-  width: 8px;
-  opacity: 1;
-  visibility: visible;
-  bottom: calc(100% + -3px);
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-}
-
-[data-tooltip-test]:hover::after {
-  position: absolute;
-  display: block;
-  content: attr(data-tooltip-btn);
-  color: #dcddde;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1;
-  background-color: #18191c;
-  padding: 9px 10px;
-  border-radius: 6px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  white-space: nowrap;
-  opacity: 1;
-  visibility: visible;
-  bottom: calc(100% + 1px);
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
-}
-
 .body-wrapper {
   display: -ms-grid;
   display: grid;
@@ -597,6 +459,36 @@ body {
 
 .btn-discord:hover #discord-icon {
   color: #fff;
+}
+
+.btn-round {
+  border-radius: 999px;
+  height: 48px;
+  width: 48px;
+  color: #43b581;
+  background-color: #36393f;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-transition: background-color 150ms ease-out;
+  transition: background-color 150ms ease-out;
+}
+
+.btn-round .btn-icon {
+  fill: currentColor;
+}
+
+.btn-round:hover {
+  border-radius: 16px;
+  background-color: currentColor;
+}
+
+.btn-round:hover.server {
+  background-color: transparent;
+}
+
+.btn-round:hover .btn-icon {
+  fill: #ffffff;
 }
 
 .panel {
@@ -890,15 +782,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 0.875rem;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
   padding: 0 8px;
+  font-size: 0.875rem;
   text-decoration: none;
+  line-height: 18px;
 }
 
 .room-audio .item .profile {
@@ -921,8 +812,6 @@ body {
 .room-audio .item .profile .profile-title {
   font-weight: 500;
   color: #8e9297;
-  line-height: 20px;
-  text-decoration: none;
   padding-left: 8px;
   overflow-x: hidden;
   white-space: nowrap;
@@ -933,6 +822,7 @@ body {
 }
 
 .room-audio .item .hidden {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -948,7 +838,12 @@ body {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  height: 100%;
   margin-left: 4px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  z-index: 1;
 }
 
 .room-audio .item .hidden .mute {

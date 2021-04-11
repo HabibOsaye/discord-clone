@@ -179,82 +179,6 @@ body {
   }
 }
 
-// data-tooltip-btn | audio room (top position)
-
-[data-tooltip-test] {
-  // position: relative !important;
-  display: flex;
-  align-items: center;
-
-  &::before {
-    position: absolute;
-    content: '';
-    opacity: 0;
-    visibility: hidden;
-    z-index: 10;
-    transition: all 50ms ease;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    opacity: 0;
-    visibility: hidden;
-    z-index: 10;
-    transform: scale(20%);
-    -webkit-transform: scale(20%);
-    -moz-transform: scale(20%);
-    -o-transform: scale(20%);
-    -ms-transform: scale(20%);
-    transition:
-      opacity 50ms ease-out,
-      transform 50ms cubic-bezier(.57, -0.3, .38, 1.32);
-  }
-}
-
-[data-tooltip-test]:hover {
-
-  &::before {
-    position: absolute;
-    display: block;
-    content: '';
-    background-color: #18191c;
-    height: 8px;
-    width: 8px; 
-    opacity: 1;
-    visibility: visible;
-    bottom: calc(100% + -3px);
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-  }
-
-  &::after {
-    position: absolute;
-    display: block;
-    content: attr(data-tooltip-btn);
-    color: $text-normal;
-    font-size: font-size(medium);
-    font-weight: font-weight(semibold);
-    line-height: 1;
-    background-color: #18191c;
-    padding: 9px 10px;
-    border-radius: 6px;
-    box-sizing: border-box;
-    white-space: nowrap;
-    opacity: 1;
-    visibility: visible;
-    bottom: calc(100% + 1px);
-    transform: scale(100%);
-    -webkit-transform: scale(100%);
-    -moz-transform: scale(100%);
-    -o-transform: scale(100%);
-    -ms-transform: scale(100%);
-  }
-}
-
 // ***************************************************** //
 
 
@@ -351,6 +275,35 @@ body {
 
     #discord-icon {
       color: #fff;
+    }
+  }
+}
+
+// nav btn (server)
+
+.btn-round {
+  border-radius: 999px;
+  height: 48px;
+  width: 48px;
+  color: $primary-green;
+  background-color: $background-grey;
+  flex: none;
+  transition: background-color 150ms ease-out;
+
+  .btn-icon {
+    fill: currentColor;
+  }
+
+  &:hover {
+    border-radius: 16px;
+    background-color: currentColor;
+
+    &.server {
+      background-color: transparent;
+    }
+
+    .btn-icon {
+      fill: #ffffff;
     }
   }
 }
@@ -478,7 +431,6 @@ body {
 
     &:hover {
       color: $text-normal;
-      // color: yellow;
       background-color: $background-hover-fill;
 
       .hidden {
@@ -553,27 +505,6 @@ body {
   }
 }
 
-
-.panel-room .panel-room-group:last-child .room-subgroup:last-child {
-
-  // background-color: black;
-
-  .room-subgroup-header {
-    // background-color: orangered;
-
-    .room-subgroup-title {
-      // background-color: palevioletred;
-    }
-  }
-}
-
-.panel-room .panel-room-group:last-child .room-subgroup:nth-child(3) {
-
-  // background-color: rebeccapurple;
-  // border: 1px solid red;
-}
-
-
 // room audio
 
 .room-audio {
@@ -595,12 +526,12 @@ body {
 
   .item {
     @include flex-center(row);
-    font-size: font-size(medium);
-    flex-wrap: nowrap;
     justify-content: space-between;
     height: 100%;
     padding: 0 8px;
+    font-size: font-size(medium);
     text-decoration: none;
+    line-height: 18px;
 
     .profile {
       @include flex-center(row);
@@ -609,8 +540,6 @@ body {
       .profile-title {
         font-weight: font-weight(medium);
         color: $channel-default;
-        line-height: 20px;
-        text-decoration: none;
         padding-left: 8px;
         overflow-x: hidden;
         white-space: nowrap;
@@ -619,12 +548,16 @@ body {
       }
     }
 
-    // room-audio-item - active | update
+    // room-audio-item - active | update | live
 
     .hidden {
+      position: relative;
       @include flex-center(row);
       flex-wrap: nowrap;
+      height: 100%;
       margin-left: 4px;
+      flex: none;
+      z-index: 1;
 
       .mute {
         color: $channel-default;
@@ -685,7 +618,6 @@ body {
 
       }
     }
-
   }
 
 }
