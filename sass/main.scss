@@ -311,9 +311,9 @@ body {
 // server panel
 
 .panel {
-  background-color: $background-panel-grey;
-  color: #ffffff;
   position: relative;
+  background-color: $background-panel-grey;
+  color: #fff;
 }
 
 .server-header {
@@ -620,4 +620,87 @@ body {
     }
   }
 
+}
+
+//  panel footer
+
+.panel-footer {
+  position: absolute;
+  @include flex-center(row);
+  width: 100%;
+  height: 48px;
+  bottom: 0;
+  left: 0;
+  background-color: #292B2F;
+
+  .panel-user-settings {
+    @include flex-center(row);
+    justify-content: space-between;
+    padding: 4px 8px;
+
+    flex: 0 1 100%;
+
+    .user-profile {
+      @include flex-center(row);
+
+      .user-account {
+        @include flex-center(column);
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 80px;
+        margin-left: 8px;
+
+        .user-username {
+          color: #fff;
+          font-size: font-size(medium);
+          font-weight: font-weight(semibold);
+          text-align: left;
+          margin-bottom: 1px;
+          line-height: 1;
+        }
+
+        .user-id {
+          color: $icon-state-normal;
+          font-size: font-size(small);
+          font-weight: font-weight(normal);
+          text-align: left;
+          line-height: 1;
+        }
+      }
+    }
+
+    .user-settings {
+      @include flex-center(row);
+      justify-content: flex-end;
+      flex: none;
+      color: $icon-state-normal;
+    }
+
+    .btn {
+      color: $icon-state-normal;
+
+      .strikethrough {
+        color: $secondary-red;
+      }
+    }
+  }
+
+
+  .user-profile-image {
+    position: relative;
+    
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 15px;
+      height: 15px;
+      background-color: $primary-green;
+      border: 3px solid #292B2F;
+      border-radius: 999px;
+      bottom: -2px;
+      right: -2px;
+      z-index: 99;
+    }
+  }
 }

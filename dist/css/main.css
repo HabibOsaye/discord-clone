@@ -89,6 +89,14 @@ span {
   width: 20px;
 }
 
+.btn-hover {
+  border-radius: 4px;
+}
+
+.btn-hover:hover {
+  background-color: rgba(79, 84, 92, 0.32);
+}
+
 .btn-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,6 +123,13 @@ span {
   width: 14px;
 }
 
+.icon-fill-default {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  color: #72767d;
+}
+
 .icon-profile {
   position: relative;
   display: -webkit-box;
@@ -132,22 +147,16 @@ span {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.icon-profile.icon-profile-hover {
+.icon-profile.icon-profile-hover:hover {
   opacity: 0.75;
 }
 
 .icon-profile-sm {
   width: 24px;
   height: 24px;
-}
-
-.icon-fill-default {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  color: #72767d;
 }
 
 .seperator {
@@ -492,9 +501,9 @@ body {
 }
 
 .panel {
-  background-color: #2f3136;
-  color: #ffffff;
   position: relative;
+  background-color: #2f3136;
+  color: #fff;
 }
 
 .server-header {
@@ -904,5 +913,156 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.panel-footer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 48px;
+  bottom: 0;
+  left: 0;
+  background-color: #292B2F;
+}
+
+.panel-footer .panel-user-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 4px 8px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+.panel-footer .panel-user-settings .user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.panel-footer .panel-user-settings .user-profile .user-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 80px;
+  margin-left: 8px;
+}
+
+.panel-footer .panel-user-settings .user-profile .user-account .user-username {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+.panel-footer .panel-user-settings .user-profile .user-account .user-id {
+  color: #b9bbbe;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1;
+}
+
+.panel-footer .panel-user-settings .user-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  color: #b9bbbe;
+}
+
+.panel-footer .panel-user-settings .btn {
+  color: #b9bbbe;
+}
+
+.panel-footer .panel-user-settings .btn .strikethrough {
+  color: #f04747;
+}
+
+.panel-footer .user-profile-image {
+  position: relative;
+}
+
+.panel-footer .user-profile-image::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #43b581;
+  border: 3px solid #292B2F;
+  border-radius: 999px;
+  bottom: -2px;
+  right: -2px;
+  z-index: 99;
 }
 /*# sourceMappingURL=main.css.map */

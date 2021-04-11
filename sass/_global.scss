@@ -64,6 +64,14 @@
   width: 20px;
 }
 
+.btn-hover {
+  border-radius: 4px;
+
+  &:hover {
+    background-color: $background-active-fill;
+  }
+}
+
 // icon
 
 .btn-icon {
@@ -90,6 +98,13 @@
   width: 14px;
 }
 
+.icon-fill-default {
+  flex: none;
+  color: $icon-state-default;
+}
+
+// profile images
+
 .icon-profile {
   position: relative;
   display: flex;
@@ -103,20 +118,19 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  cursor: pointer;
 
   &.icon-profile-hover {
-    opacity: 0.75;
+    
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }
 
 .icon-profile-sm {
   width: 24px;
   height: 24px;
-}
-
-.icon-fill-default {
-  flex: none;
-  color: $icon-state-default;
 }
 
 // spacers 
