@@ -35,6 +35,19 @@
 
 // btn
 
+.btn-container {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  width: fit-content;
+  height: fit-content;
+  flex: none;
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .btn {
   display: flex;
   place-content: center;
@@ -121,7 +134,7 @@
   cursor: pointer;
 
   &.icon-profile-hover {
-    
+
     &:hover {
       opacity: 0.75;
     }

@@ -11,6 +11,7 @@ $secondary-green: #22ab92;
 $secondary-purple: #8257af;
 $secondary-red: #f04747;
 $secondary-orange: #faa61a;
+$secondary-blue: #6e84d1;
 
 $secondary-tooltip: #18191c;
 
@@ -42,8 +43,9 @@ $background-hover-fill: rgba(79,84,92,0.16);
 // font-size
 
 $font-size: (
-	"default": 16px,
-  "large": 1.2rem,
+	"default": 1rem,
+  // "xlarge": 1.2rem,
+  "large": 1.125rem,
   "medium": 0.875rem,
   "small": 0.75rem,
 );
