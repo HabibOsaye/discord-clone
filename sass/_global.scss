@@ -135,28 +135,22 @@
 
 // spacers 
 
-.seperator {
-  display: block;
-  background-color: $background-hover-fill;
-  width: 32px;
-  height: 2px;
-  margin-bottom: 8px;
-}
-
 .seperator-hrt {
   display: block;
   background-color: $background-hover-fill;
   width: 32px;
   height: 2px;
   margin-bottom: 8px;
+  flex: none;
 }
 
 .seperator-vrt {
   display: block;
-  background-color: $background-hover-fill;
+  background-color: $background-active-fill;
   width: 2px;
   height: 32px;
-  margin-right: 8px;
+  margin: 0 16px;
+  flex: none;
 }
 
 // images
