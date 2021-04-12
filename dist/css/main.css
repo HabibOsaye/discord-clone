@@ -65,10 +65,10 @@ span {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
   background: none;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0px;
+          flex: 0 0 0;
 }
 
 .btn-container:hover {
@@ -128,6 +128,9 @@ span {
   display: block;
   height: 24px;
   width: 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 .btn-icon-sm {
@@ -161,14 +164,17 @@ span {
   place-content: center;
   width: 32px;
   height: 32px;
+  max-width: 32px;
+  max-height: 32px;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
   background-color: #36393f;
   border-radius: 999px;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   cursor: pointer;
 }
 
@@ -179,6 +185,8 @@ span {
 .icon-profile-sm {
   width: 24px;
   height: 24px;
+  max-width: 24px;
+  max-height: 24px;
 }
 
 .seperator-hrt {
@@ -210,6 +218,93 @@ span {
   margin: 0;
 }
 
+.badge__header {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f04747;
+  -webkit-box-shadow: 0 0 0 2px #36393f;
+          box-shadow: 0 0 0 2px #36393f;
+  bottom: 2px;
+  right: 2px;
+}
+
+.badge__online {
+  position: absolute;
+  display: block;
+  content: url("/app/assets/icons/online_24dp.svg");
+  width: 10px;
+  height: 10px;
+  background-color: #2f3136;
+  -webkit-box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+          box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+  border-radius: 999px;
+  bottom: 2px;
+  right: 2px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.badge__idle {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  z-index: 4;
+  background-color: red;
+  cursor: pointer;
+}
+
+.badge__idle::after {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  content: url("/app/assets/icons/idle_24dp.svg");
+  width: 10px;
+  height: 10px;
+  background-color: #2f3136;
+  -webkit-box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+          box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+  border-radius: 999px;
+  bottom: 2px;
+  right: 2px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.badge__do-not-disturb {
+  position: absolute;
+  display: block;
+  content: url("/app/assets/icons/do_not_disturb_24dp.svg");
+  width: 10px;
+  height: 10px;
+  background-color: #2f3136;
+  -webkit-box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+          box-shadow: 0 0 0 3px #2f3136, inset 0 0 0 4px #2f3136;
+  border-radius: 999px;
+  bottom: 2px;
+  right: 2px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.room-activity .admin {
+  color: #f1c40f;
+}
+
+.room-activity .moderator {
+  color: #8257af;
+}
+
+.room-activity .normal {
+  color: #22ab92;
+}
+
 *,
 *::before,
 *::after {
@@ -226,6 +321,7 @@ body {
   text-rendering: optimizeLegibility;
   height: 100vh;
   overflow: hidden;
+  line-height: 20px;
 }
 
 [data-tooltip-nav]::before {
@@ -296,7 +392,6 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 6px;
-  white-space: nowrap;
   opacity: 1;
   left: calc(100% + 8px);
   transform: scale(100%);
@@ -371,9 +466,9 @@ body {
   line-height: 1rem;
   padding: 9px 10px;
   border-radius: 6px;
+  margin: 0 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  white-space: nowrap;
   opacity: 1;
   bottom: calc(100% + 6px);
   transform: scale(100%);
@@ -1112,6 +1207,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0px;
+          flex: 0 0 0;
 }
 
 .panel-footer .panel-user-settings .user-profile .user-account {
@@ -1172,8 +1273,8 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
+      -ms-flex: 0 0 0px;
+          flex: 0 0 0;
   color: #b9bbbe;
 }
 
@@ -1187,23 +1288,28 @@ body {
 
 .panel-footer .user-profile-image {
   position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 .panel-footer .user-profile-image::after {
   position: absolute;
   display: block;
   content: '';
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background-color: #43b581;
-  border: 3px solid #292B2F;
+  -webkit-box-shadow: 0 0 0 3px #292B2F;
+          box-shadow: 0 0 0 3px #292B2F;
   border-radius: 999px;
-  bottom: -2px;
-  right: -2px;
-  z-index: 99;
+  bottom: -0.5px;
+  right: -0.5px;
+  z-index: 3;
 }
 
 .header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1232,6 +1338,7 @@ body {
   padding-right: 8px;
   -webkit-box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
           box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
+  z-index: 1;
   grid-column: 3 / -1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -1463,7 +1570,7 @@ body {
   border-bottom-right-radius: 8px;
   margin-left: 16px;
   top: 0;
-  right: 0;
+  right: 16px;
   left: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1548,7 +1655,7 @@ body {
   background-color: #40444b;
   height: 44px;
   padding: 8px;
-  padding-right: 6px;
+  padding-right: 4px;
   border-radius: 8px;
   width: 100%;
 }
@@ -1634,22 +1741,32 @@ body {
   color: #dcddde;
 }
 
-.chat-text-input .btn:last-child {
+.chat-text-input .emoji-icon {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: -webkit-filter 200ms ease-out;
-  transition: -webkit-filter 200ms ease-out;
-  transition: filter 200ms ease-out;
-  transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
+  -webkit-transition: -webkit-filter 250ms ease-out, -webkit-transform 250ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: -webkit-filter 250ms ease-out, -webkit-transform 250ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: filter 250ms ease-out, transform 250ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: filter 250ms ease-out, transform 250ms cubic-bezier(0.57, -0.3, 0.38, 1.32), -webkit-filter 250ms ease-out, -webkit-transform 250ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
 }
 
-.chat-text-input .btn:last-child:hover {
+.chat-text-input .emoji-icon .btn-icon {
+  height: 22.5px;
+  width: 22.5px;
+}
+
+.chat-text-input .emoji-icon:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+  transform: scale(110%);
+  -webkit-transform: scale(110%);
+  -moz-transform: scale(110%);
+  -o-transform: scale(110%);
+  -ms-transform: scale(110%);
 }
 
-.room-members {
-  background-color: blue;
+.room-activity {
+  background-color: #2f3136;
   height: 100%;
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
@@ -1657,5 +1774,149 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+}
+
+.room-member-group {
+  padding-top: 24px;
+}
+
+.room-member-group .room-member-group-header {
+  color: #8e9297;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 100%;
+  line-height: 16px;
+  margin-bottom: 2px;
+  padding-left: 16px;
+}
+
+.room-member-group .room-member-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 44px;
+  padding: 0 8px;
+  margin: 0 8px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  background-color: black;
+}
+
+.room-member-group .room-member-item .user-profile-image {
+  position: relative;
+  margin-right: 12px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+.room-member-group .room-member-item:hover {
+  cursor: pointer;
+  background-color: rgba(79, 84, 92, 0.16);
+}
+
+.room-member-group .room-member-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 34px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.room-member-group .room-member-details .room-member-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-weight: 500;
+  background-color: green;
+  height: 20px;
+  overflow-x: hidden;
+}
+
+.room-member-group .room-member-details .room-member-name .username {
+  line-height: 20px;
+  vertical-align: baseline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+.room-member-group .room-member-details .room-member-activity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #8e9297;
+  font-size: 0.75rem;
+  font-weight: 500;
+  vertical-align: baseline;
+  background-color: #724976;
+  height: 16px;
+}
+
+.room-member-group .room-member-details .room-member-activity * {
+  line-height: 16px;
+  vertical-align: baseline;
+}
+
+.room-member-group b {
+  font-weight: 600;
 }
 /*# sourceMappingURL=main.css.map */

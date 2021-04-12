@@ -17,6 +17,7 @@ body {
   text-rendering: optimizeLegibility;
   height: 100vh;
   overflow: hidden;
+  line-height: 20px;
 }
 
 // ****** @MIXIN ****** //
@@ -101,7 +102,6 @@ body {
     padding: 9px 10px;
     box-sizing: border-box;
     border-radius: 6px;
-    white-space: nowrap;
     opacity: 1;
     left: calc(100% + 8px);
 
@@ -180,8 +180,9 @@ body {
     line-height: 1rem;
     padding: 9px 10px;
     border-radius: 6px;
+    margin: 0 16px;
+
     box-sizing: border-box;
-    white-space: nowrap;
     opacity: 1;
     bottom: calc(100% + 6px);
 
@@ -747,6 +748,8 @@ body {
 
     .user-profile {
       @include flex-center(row);
+      justify-content: flex-start;
+      flex: 0 0 0;
 
       .user-account {
         @include flex-center(column);
@@ -778,7 +781,7 @@ body {
     .user-settings {
       @include flex-center(row);
       justify-content: flex-end;
-      flex: none;
+      flex: 0 0 0;
       color: $icon-state-normal;
     }
 
@@ -793,19 +796,20 @@ body {
 
   .user-profile-image {
     position: relative;
+    flex: none;
 
     &::after {
       position: absolute;
       display: block;
       content: '';
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
       background-color: $primary-green;
-      border: 3px solid #292B2F;
+      box-shadow: 0 0 0 3px #292B2F;
       border-radius: 999px;
-      bottom: -2px;
-      right: -2px;
-      z-index: 99;
+      bottom: -0.5px;
+      right: -0.5px;
+      z-index: 3;
     }
   }
 }
@@ -813,6 +817,7 @@ body {
 // header 
 
 .header {
+  position: relative;
   @include flex-center(row);
   justify-content: space-between;
   color: $text-mute;
@@ -823,6 +828,7 @@ body {
   padding: 0 10px;
   padding-right: 8px;
   box-shadow: $shadow;
+  z-index: 1;
 
   grid-column: 3 / -1;
   grid-row: 1 / 2;
@@ -976,7 +982,7 @@ body {
   border-bottom-right-radius: 8px;
   margin-left: 16px;
   top: 0;
-  right: 0;
+  right: 16px;
   left: 0;
   user-select: none;
   overflow-x: hidden;
@@ -1033,9 +1039,8 @@ body {
   justify-content: flex-start;
   background-color: #40444b;
   height: 44px;
-  // max-height: min-content;
   padding: 8px;
-  padding-right: 6px;
+  padding-right: 4px;
   border-radius: 8px;
   width: 100%;
 
@@ -1082,24 +1087,123 @@ body {
     }
   }
 
-  .btn:last-child {
+  .emoji-icon {
     filter: grayscale(100%);
-    transition: filter 200ms ease-out;
+    transition:
+      filter 250ms ease-out, transform 250ms cubic-bezier(.57, -0.3, .38, 1.32);
+
+    .btn-icon {
+      height: 22.5px;
+      width: 22.5px;
+    }
 
     &:hover {
       filter: grayscale(0);
+      transform: scale(110%);
+      -webkit-transform: scale(110%);
+      -moz-transform: scale(110%);
+      -o-transform: scale(110%);
+      -ms-transform: scale(110%);
     }
   }
-
 }
 
 // room members
 
-.room-members {
+.room-activity {
 
-  background-color: blue;
+  background-color: $background-panel-grey;
   height: 100%;
 
   grid-column: 4 / 5;
   grid-row: 2 / 3;
+}
+
+.room-member-group {
+  padding-top: 24px;
+
+
+  .room-member-group-header {
+    color: $channel-default;
+    font-size: font-size(small);
+    font-weight: font-weight(semibold);
+    text-transform: uppercase;
+    width: 100%;
+    line-height: 16px;
+    margin-bottom: 2px;
+    padding-left: 16px;
+  }
+
+  .room-member-item {
+    @include flex-center(row);
+    justify-content: flex-start;
+    height: 44px;
+    padding: 0 8px;
+    margin: 0 8px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    background-color: black;
+
+    .user-profile-image {
+      position: relative;
+      margin-right: 12px;
+      flex: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $background-hover-fill;
+    }
+  }
+
+  .room-member-details {
+    @include flex-center(column);
+    justify-content: center;
+    align-items: flex-start;
+    height: 34px;
+    box-sizing: border-box;
+
+    .room-member-name {
+      @include flex-center(row);
+      justify-content: flex-start;
+      font-weight: font-weight(medium);
+      background-color: green;
+      height: 20px;
+      overflow-x: hidden;
+
+      .username {
+        line-height: 20px;
+        vertical-align: baseline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // width: 100%;
+
+        flex: 0 1 100%;
+      }
+
+    }
+
+    .room-member-activity {
+      @include flex-center(row);
+      justify-content: flex-start;
+      color: $channel-default;
+      font-size: font-size(small);
+      font-weight: font-weight(medium);
+      vertical-align: baseline;
+      background-color: rgb(114, 73, 118);
+      height: 16px;
+
+      * {
+        line-height: 16px;
+        vertical-align: baseline;
+      }
+    }
+  }
+
+
+  b {
+    font-weight: font-weight(semibold);
+  }
+
 }
