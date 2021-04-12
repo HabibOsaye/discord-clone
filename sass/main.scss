@@ -127,7 +127,6 @@ body {
     content: '';
     opacity: 0;
     z-index: 10;
-
     transition: all 50ms ease;
   }
 
@@ -208,7 +207,6 @@ body {
     content: '';
     opacity: 1;
     z-index: 10;
-
     transition: all 50ms ease;
   }
 
@@ -274,6 +272,89 @@ body {
   }
 }
 
+// data-tooltip-top-delay (top position)
+
+[data-tooltip-top-delay] {
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+
+  &::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    z-index: 10;
+    transition-delay: .5s;
+    transition: all 50ms ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    z-index: 10;
+
+    transform: scale(20%);
+    -webkit-transform: scale(20%);
+    -moz-transform: scale(20%);
+    -o-transform: scale(20%);
+    -ms-transform: scale(20%);
+    transition-delay: .5s;
+    transition:
+      opacity 50ms ease-out,
+      transform 50ms cubic-bezier(.57, -0.3, .38, 1.32);
+  }
+}
+
+[data-tooltip-top-delay]:hover {
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: $secondary-tooltip;
+    opacity: 1;
+    bottom: calc(100% + 2px);
+    transition-delay: .5s;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: attr(data-tooltip-top-delay);
+    color: $text-normal;
+    font-size: font-size(medium);
+    font-weight: font-weight(semibold);
+    background-color: $secondary-tooltip;
+    width: max-content;
+    max-width: 21ch;
+    line-height: 1rem;
+    padding: 9px 10px;
+    border-radius: 6px;
+    margin: 0 16px;
+    box-sizing: border-box;
+    opacity: 1;
+    bottom: calc(100% + 6px);
+    transition-delay: .5s;
+
+    transform: scale(100%);
+    -webkit-transform: scale(100%);
+    -moz-transform: scale(100%);
+    -o-transform: scale(100%);
+    -ms-transform: scale(100%);
+  }
+}
+
 
 // ***************************************************** //
 
@@ -288,7 +369,7 @@ body {
   overflow: hidden;
 }
 
-// left navigation
+// nav left
 
 .nav {
   background-color: $background-black;
@@ -310,7 +391,7 @@ body {
   margin-bottom: 8px;
   transition: all none;
 
-  // indicator
+  // indicator - active | update
 
   .item-status {
     position: relative;
@@ -358,21 +439,29 @@ body {
         left: -12px;
       }
 
-      .btn-round {
+      .btn-nav-left {
         border-radius: 16px;
       }
     }
   }
 }
 
-// nav btn (server)
+// nav buttons 
 
-.btn-round {
-  border-radius: 999px;
+.btn-nav-left {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  color: $primary-green;
   height: 48px;
   width: 48px;
-  color: $primary-green;
   background-color: $background-grey;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  outline: none;
+  overflow: hidden;
+  user-select: none;
   flex: none;
   transition: background-color 150ms ease-out;
 
@@ -381,6 +470,7 @@ body {
   }
 
   &:hover {
+    cursor: pointer;
     border-radius: 16px;
     background-color: currentColor;
 
@@ -453,7 +543,7 @@ body {
 
   .server-title {
     @include flex-center(row);
-    flex-flow: nowrap;
+    // flex-flow: nowrap;
 
     .server-name {
       font-size: 1rem;
@@ -468,13 +558,34 @@ body {
       flex: 0 1 auto;
     }
   }
+
+  .partner-badge {
+    // position: relative;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    margin-top: 1px;
+
+    .icon-partner-badge-base {
+      width: 16px;
+      height: 16px;
+      color: $primary-blue;
+    }
+
+    .icon-partner-badge-top {
+      position: absolute;
+      width: 14px;
+      z-index: 1;
+    }
+  }
 }
 
 .panel-room {
   display: flex;
   flex-flow: column;
+  align-items: flex-start;
   padding-right: 8px;
-  padding-top: 18px;
+  padding-top: 16px;
   user-select: none;
 
   .panel-room-group {
@@ -488,12 +599,14 @@ body {
 
 .room-header {
   @include flex-center(row);
-  justify-content: initial;
+  justify-content: flex-start;
   text-transform: uppercase;
   color: $channel-default;
+  text-transform: uppercase;
   width: 100%;
   padding-left: 2px;
   margin-bottom: 6px;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
@@ -504,25 +617,32 @@ body {
     font-size: font-size(small);
     font-weight: font-weight(semibold);
     padding-left: 1.5px;
+    padding-right: 16px;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
 .room-subgroup {
   position: relative;
-  display: flex;
+  @include flex-center(row);
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   line-height: 20px;
   padding-left: 8px;
-  margin-bottom: 1.5px;
+  margin-bottom: 2px;
   user-select: none;
 
   .container {
-    display: flex;
+    @include flex-center(row);
+    justify-content: space-between;
     align-items: center;
     color: $channel-default;
     width: 100%;
-    height: 34px;
+    height: 32px;
     padding: 0 8px;
     padding-right: 5px;
     border-radius: 4px;
@@ -530,9 +650,8 @@ body {
     text-decoration: none;
 
     .hidden {
-      flex: none;
       visibility: hidden;
-      justify-self: flex-end;
+      // justify-self: flex-end;
     }
 
     &:hover {
@@ -549,8 +668,7 @@ body {
 .room-subgroup-header {
   display: flex;
   align-items: center;
-  width: 100%;
-  overflow-x: hidden;
+  width: 16ch;
   flex: 0 1 auto;
 
   .room-subgroup-title {
@@ -559,6 +677,11 @@ body {
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    flex: 0 1 auto;
+  }
+
+  .btn-icon {
+    color: $icon-state-default;
   }
 }
 
@@ -611,9 +734,9 @@ body {
   }
 }
 
-// room audio
+// room stream
 
-.room-audio {
+.room-stream {
   position: absolute;
   display: flex;
   flex-flow: column;
@@ -621,31 +744,37 @@ body {
   top: 100%;
   right: 0;
   margin-top: 1px;
-  padding-left: 36px;
+  padding-left: 32px;
 
-  .room-audio-item {
+  &> :first-child {
+    margin-top: 2px;
+  }
+
+  .room-stream-item {
     padding: 0;
     height: 30px;
     border-radius: 4px;
-    margin: 2px 0;
+    margin-bottom: 2px;
   }
 
   .item {
     @include flex-center(row);
     justify-content: space-between;
-    height: 100%;
-    padding: 0 8px;
     font-size: font-size(medium);
     text-decoration: none;
     line-height: 18px;
+    height: 100%;
+    padding: 0 8px;
 
     .profile {
       @include flex-center(row);
+      justify-content: flex-start;
+      flex: 0 1 auto;
       overflow-x: hidden;
 
       .profile-title {
-        font-weight: font-weight(medium);
         color: $channel-default;
+        font-weight: font-weight(medium);
         padding-left: 8px;
         overflow-x: hidden;
         white-space: nowrap;
@@ -654,16 +783,15 @@ body {
       }
     }
 
-    // room-audio-item - active | update | live
+    // room-stream-item - active | update | live
 
     .hidden {
       position: relative;
       @include flex-center(row);
-      flex-wrap: nowrap;
-      height: 100%;
+      justify-content: flex-end;
       margin-left: 4px;
-      flex: none;
-      z-index: 1;
+      flex: 0 0 auto;
+      z-index: 2;
 
       .mute {
         color: $channel-default;
@@ -685,15 +813,17 @@ body {
         vertical-align: baseline;
         text-transform: uppercase;
         background-color: $secondary-red;
+        width: auto;
         height: 16px;
         padding: 2px 6px;
         border-radius: 999px;
+        white-space: nowrap;
         margin-left: 2px;
       }
     }
   }
 
-  .room-audio-item {
+  .room-stream-item {
 
     &:hover {
       background-color: $background-hover-fill;
@@ -704,7 +834,7 @@ body {
     }
   }
 
-  .room-audio-item {
+  .room-stream-item {
 
     &.mute {
       .hidden .mute {
@@ -726,30 +856,29 @@ body {
   }
 }
 
-//  panel footer
+// room panel footer
 
 .panel-footer {
   position: absolute;
   @include flex-center(row);
-  width: 100%;
   height: 48px;
+  background-color: #292B2F;
   bottom: 0;
   left: 0;
-  background-color: #292B2F;
+  right: 0;
   user-select: none;
-  z-index: 2;
+  z-index: 3;
 
   .panel-user-settings {
     @include flex-center(row);
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 4px 8px;
-
-    flex: 0 1 100%;
+    flex: 0 0 100%;
 
     .user-profile {
       @include flex-center(row);
       justify-content: flex-start;
-      flex: 0 0 0;
+      flex: 1 1 100%;
 
       .user-account {
         @include flex-center(column);
@@ -758,6 +887,7 @@ body {
         width: 80px;
         height: 32px;
         margin-left: 8px;
+        flex: 1 0 auto;
 
         .user-username {
           color: #fff;
@@ -780,9 +910,7 @@ body {
 
     .user-settings {
       @include flex-center(row);
-      justify-content: flex-end;
-      flex: 0 0 0;
-      color: $icon-state-normal;
+      flex: 0 0 auto;
     }
 
     .btn {
@@ -825,36 +953,31 @@ body {
   width: 100%;
   background-color: $background-grey;
   user-select: none;
-  padding: 0 10px;
+  padding: 0 12px;
   padding-right: 8px;
   box-shadow: $shadow;
   z-index: 1;
 
   grid-column: 3 / -1;
   grid-row: 1 / 2;
-
-  .btn {
-    flex: none;
-  }
 }
 
 .header-room-info {
   @include flex-center(row);
   justify-content: flex-start;
-  flex-wrap: nowrap;
   overflow-x: hidden;
   flex: 1 1 50%;
 
   .room-title {
+    // display: inline-block;
     color: #fff;
     font-weight: font-weight(semibold);
     line-height: 20px;
-    width: 100%;
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-left: 4px;
-    flex: 1 0 max-content;
+    flex: 0 0 auto;
   }
 
   .room-description {
@@ -866,12 +989,11 @@ body {
     white-space: nowrap;
     text-overflow: ellipsis;
     margin: 0;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
   }
 
   .btn {
-    color: $channel-default;
-    flex: none;
+    color: $icon-state-default;
 
     &:hover {
       cursor: default;
@@ -887,20 +1009,27 @@ body {
 
   .btn-container {
     margin: 0 8px;
-  }
 
-  .btn {
-    flex: none;
-    color: $icon-state-normal;
+    .btn {
+      color: $icon-state-normal;
 
-    &:hover {
-      color: $icon-state-hover;
+      &:hover {
+        color: $icon-state-hover;
+      }
+    }
+
+    &.active {
+
+      .btn {
+        color: $icon-state-active;
+      }
     }
   }
 
   // header searchbar
 
   .header-searchbar {
+    position: relative;
     @include flex-center(row);
     justify-content: flex-end;
     width: 144px;
@@ -908,7 +1037,6 @@ body {
     background-color: $background-black;
     border-radius: 4px;
     padding-right: 2px;
-    box-sizing: border-box;
     margin: 0 8px;
 
     .searchbar {
@@ -916,7 +1044,8 @@ body {
       justify-content: space-between;
       line-height: 20px;
       height: 24px;
-      width: 100%;
+      // width: 100%;
+      flex: 1 1 100%;
 
       input[type="search"] {
         display: inline-block;
@@ -940,7 +1069,7 @@ body {
         color: $icon-state-default;
 
         &:hover {
-          cursor: default;
+          cursor: text;
         }
       }
     }
@@ -954,7 +1083,6 @@ body {
 // chat view
 
 .chat-viewbox {
-  background-color: violet;
   background-color: #36393f;
 
   grid-column: 3 / 4;
@@ -980,12 +1108,11 @@ body {
   padding-left: 12px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  margin-left: 16px;
   top: 0;
   right: 16px;
-  left: 0;
+  left: 16px;
   user-select: none;
-  overflow-x: hidden;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
@@ -995,10 +1122,10 @@ body {
     color: #fff;
     font-size: font-size(medium);
     font-weight: font-weight(medium);
-    width: max-content;
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
+    flex: 0 2 auto;
   }
 
   .chat-unread-group {
@@ -1007,6 +1134,7 @@ body {
     color: #fff;
     margin-left: 24px;
     flex: 0 0 auto;
+    overflow: hidden;
 
     .chat-unread-label {
       font-size: font-size(medium);
@@ -1016,16 +1144,14 @@ body {
       margin-right: 4px;
     }
 
-    .btn-container .btn {
-      display: flex;
-      align-items: center;
+    .btn {
       color: #fff;
       margin-top: -4px;
     }
   }
 }
 
-// chat input bar
+// chat input
 
 .chat-box-container {
   position: absolute;
@@ -1042,43 +1168,39 @@ body {
   padding: 8px;
   padding-right: 4px;
   border-radius: 8px;
-  width: 100%;
 
   .chat-form {
     @include flex-center(row);
     justify-content: flex-start;
-    flex: 1 100%;
+    flex: 1 1 100%;
     overflow-x: hidden;
 
     .chat-input {
-      @include flex-center(row);
-      justify-content: flex-start;
       color: $channel-default;
       font-size: font-size(default);
       font-weight: font-weight(normal);
       line-height: 1.2;
       min-height: 32px;
+      padding-left: 8px;
       background: none;
       border: none;
-      padding-left: 8px;
       outline: none;
-      flex: 1 100%;
       overflow-x: hidden;
       text-overflow: ellipsis;
+      flex: 1 1 100%;
     }
   }
 
   .chat-text-btn-group {
     display: inline-flex;
     align-items: center;
+    flex: 0 0 auto;
   }
 
   .btn-container {
     margin: 0 8px;
-    height: 32px;
 
     .btn {
-      flex: none;
       color: $icon-state-normal;
 
       &:hover {
@@ -1111,15 +1233,14 @@ body {
 // room members
 
 .room-activity {
-
   background-color: $background-panel-grey;
-  height: 100%;
 
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
 
 .room-member-group {
+  width: 100%;
   padding-top: 24px;
 
 
@@ -1128,10 +1249,10 @@ body {
     font-size: font-size(small);
     font-weight: font-weight(semibold);
     text-transform: uppercase;
-    width: 100%;
     line-height: 16px;
     margin-bottom: 2px;
     padding-left: 16px;
+    user-select: none;
   }
 
   .room-member-item {
@@ -1142,13 +1263,7 @@ body {
     margin: 0 8px;
     margin-bottom: 2px;
     border-radius: 4px;
-    background-color: black;
-
-    .user-profile-image {
-      position: relative;
-      margin-right: 12px;
-      flex: none;
-    }
+    user-select: none;
 
     &:hover {
       cursor: pointer;
@@ -1156,47 +1271,57 @@ body {
     }
   }
 
+  .user-profile-image {
+    position: relative;
+    margin-right: 12px;
+    flex: 0 0 auto;
+  }
+
   .room-member-details {
     @include flex-center(column);
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    height: 34px;
-    box-sizing: border-box;
+    flex: 0 1 auto;
 
     .room-member-name {
       @include flex-center(row);
       justify-content: flex-start;
+      flex-wrap: nowrap;
       font-weight: font-weight(medium);
-      background-color: green;
       height: 20px;
-      overflow-x: hidden;
 
-      .username {
+      .member-username {
         line-height: 20px;
         vertical-align: baseline;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        // width: 100%;
-
-        flex: 0 1 100%;
+        flex: 0 1 11ch;
       }
 
+      .btn-container {
+        height: 20px;
+        margin: 0 4px;
+      }
     }
 
-    .room-member-activity {
+    .room-member-status {
       @include flex-center(row);
       justify-content: flex-start;
       color: $channel-default;
       font-size: font-size(small);
       font-weight: font-weight(medium);
       vertical-align: baseline;
-      background-color: rgb(114, 73, 118);
       height: 16px;
+      width: 100%;
 
-      * {
+      .status * {
         line-height: 16px;
         vertical-align: baseline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 0 1 20ch;
       }
     }
   }
