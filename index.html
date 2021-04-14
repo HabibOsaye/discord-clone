@@ -51,7 +51,9 @@
             <div class="btn-nav-left server">
               <img class="full-img" src="./app/assets/img/profile/profile-4.jpg" alt="server">
             </div>
+
             <!-- TOOLTIP ACTIVITY -->
+
             <div class="server-activity no-activity">
               
               <div class="server-title">
@@ -68,11 +70,11 @@
                 </div>
 
                 <div class="member-list">
-                  <img data-z-index="1" class="icon-profile icon-profile-xs" src="./app/assets/img/profile/profile-5.png" alt="user">
-                  <img class="icon-profile icon-profile-xs" src="./app/assets/img/profile/profile-8.png" alt="user">
-                  <img class="icon-profile icon-profile-xs" src="./app/assets/img/profile/18.jpg" alt="user">
-                  <img class="icon-profile icon-profile-xs" src="./app/assets/img/profile/27.jpg" alt="user">
-                  <img class="icon-profile icon-profile-xs" src="./app/assets/img/profile/profile-7.png" alt="user">
+                  <img data-z-index="1" class="icon-profile icon-profile-sm" src="./app/assets/img/profile/profile-5.png" alt="user">
+                  <img class="icon-profile icon-profile-sm" src="./app/assets/img/profile/profile-8.png" alt="user">
+                  <img class="icon-profile icon-profile-sm" src="./app/assets/img/profile/18.jpg" alt="user">
+                  <img class="icon-profile icon-profile-sm" src="./app/assets/img/profile/27.jpg" alt="user">
+                  <img class="icon-profile icon-profile-sm" src="./app/assets/img/profile/profile-7.png" alt="user">
                 </div>
               </div>
             </div>
@@ -294,7 +296,7 @@
                   <a href="#!" class="item">
                     <div class="profile">
                       <div class="icon-profile icon-profile-sm">
-                        <img class="icon-profile icon-profile-sm full-img" src="./app/assets/img/profile/profile-5.png">
+                        <img class="full-img" src="./app/assets/img/profile/profile-5.png">
                       </div>
   
                       <span class="profile-title">Lucid Sky (SYNX)</span>
@@ -442,10 +444,15 @@
 
               <div class="user-profile">
                 <div class="user-profile-image">
-                  <img class="icon-profile icon-profile-hover full-img" src="./app/assets/img/profile/profile.jpg" alt="Habib">
+                  <svg viewBox="0 0 32 32" width="32" height="32">
+                    <foreignObject class="icon-status-mask" x="0" y="0" width="32" height="32">
+                      <img class="icon-profile icon-profile-hover full-img" src="./app/assets/img/profile/profile.jpg" alt="Name">
+                    </foreignObject>
+                    <rect class="badge__online" x="22" y="22" width="10" height="10" ></rect>
+                  </svg>
                 </div>
 
-                <div data-tooltip-top="Click to copy username" >
+                <div data-tooltip-top-delay="Click to copy username" >
                   <div class="user-account" >
                     <span class="user-username">Habib</span>
                     <span class="user-id">#3127</span>
@@ -509,8 +516,6 @@
           <button class="btn btn-sm">
             <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" x="0" y="0" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596 8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z"></path></svg>
           </button>
-
-          <span class="badge__header"></span>
         </div>
 
         <div class="btn-container active" data-tooltip-bottom="Member List">
@@ -619,12 +624,13 @@
         <li class="room-member-item">
 
           <div class="user-profile-image">
-            <img class="icon-profile full-img" src="./app/assets/img/profile/29.jpg" alt="Name">
-            
-            <!-- <label class="g"  data-tooltip-top="Idle"> -->
-              <span class="badge__idle"></span>
-            <!-- </label> -->
-          </div>
+              <svg viewBox="0 0 32 32" width="32" height="32">
+                <foreignObject class="icon-status-mask" x="0" y="0" width="32" height="32">
+                  <img class="full-img" src="./app/assets/img/profile/29.jpg" alt="Name">
+                </foreignObject>
+                <rect class="badge__online" x="22" y="22" width="10" height="10" ></rect>
+              </svg>
+          </div> 
 
           <div class="room-member-details">
 

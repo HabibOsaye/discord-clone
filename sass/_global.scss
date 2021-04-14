@@ -113,55 +113,6 @@ Scrollbar body {
   width: 14px;
 }
 
-// .icon-fill-default {
-//   flex: 0 0 auto;
-//   color: $icon-state-default;
-// }
-
-// profile images
-
-.icon-profile {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-  max-width: 32px;
-  max-height: 32px;
-  background-color: $background-grey;
-  border-radius: 999px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; //// **********
-  cursor: pointer;
-  flex: 0 0 auto;
-
-  &.icon-profile-hover {
-
-    &:hover {
-      opacity: 0.75;
-    }
-  }
-}
-
-.icon-profile-sm {
-  width: 24px;
-  height: 24px;
-  max-width: 24px;
-  max-height: 24px;
-  border-radius: 999px;
-}
-
-.icon-profile-xs {
-  width: 20px;
-  height: 20px;
-  max-width: 20px;
-  max-height: 20px;
-  border-radius: 999px;
-}
-
-
 // spacers 
 
 .seperator-hrt {
@@ -192,44 +143,64 @@ Scrollbar body {
   flex: 0 0 auto;
 }
 
-//  badges
+// profile image
 
-.badge__header {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: $secondary-red;
-  box-shadow: 0 0 0 2px $background-grey;
-  bottom: 2px;
-  right: 2px;
+.user-profile-image {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto; 
 }
 
-.badge__online {
-  content: url('/app/assets/icons/online_24dp.svg');
-}
-
-.badge__idle {
-  content: url('/app/assets/icons/idle_24dp.svg');
-  position: absolute;
+.icon-profile {
   display: flex;
   place-items: center;
   place-content: center;
-  width: 10px;
-  height: 10px;
-  background-color: $background-panel-grey;
-  box-shadow: 0 0 0 3px $background-panel-grey, inset 0 0 0 4px $background-panel-grey;
+  width: 32px;
+  height: 32px;
+  background-color: $background-grey;
   border-radius: 999px;
-  bottom: -2px;
-  right: -2px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   cursor: pointer;
-  z-index: 1;
+  flex: 0 0 auto;
+
+  &.icon-profile-hover {
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.icon-profile-sm {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  border-radius: 999px;
+}
+
+// mask
+
+.icon-status-mask {
+  mask: url(/app/assets/icons/icon_profile_mask_32.svg);
+}
+
+.badge__online {
+  fill: $primary-green;
+  mask: url(/app/assets/icons/online_24dp.svg);
+}
+
+.badge__idle {
+  fill: $secondary-orange;
+  mask: url(/app/assets/icons/idle_24dp.svg);
 }
 
 .badge__do-not-disturb {
-  content: url('/app/assets/icons/do_not_disturb_24dp.svg');
+  fill: $secondary-red;
+  mask: url(/app/assets/icons/do_not_disturb_24dp.svg);
 }
 
 .room-activity {
