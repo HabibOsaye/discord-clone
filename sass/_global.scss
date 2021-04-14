@@ -145,12 +145,6 @@ Scrollbar body {
 
 // profile image
 
-.user-profile-image {
-  width: 32px;
-  height: 32px;
-  flex: 0 0 auto; 
-}
-
 .icon-profile {
   display: flex;
   place-items: center;
@@ -184,23 +178,55 @@ Scrollbar body {
 
 // mask
 
+.user-profile-image {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto; 
+}
+
 .icon-status-mask {
-  mask: url(/app/assets/icons/icon_profile_mask_32.svg);
+  mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+  mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
 }
 
-.badge__online {
-  fill: $primary-green;
-  mask: url(/app/assets/icons/online_24dp.svg);
+.badge-online {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url('/app/assets/icons/online_24dp.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
-.badge__idle {
-  fill: $secondary-orange;
-  mask: url(/app/assets/icons/idle_24dp.svg);
+.badge-idle {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url('/app/assets/icons/idle_24dp.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
-.badge__do-not-disturb {
-  fill: $secondary-red;
-  mask: url(/app/assets/icons/do_not_disturb_24dp.svg);
+.badge-do-not-disturb {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url('/app/assets/icons/do_not_disturb_24dp.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 .room-activity {

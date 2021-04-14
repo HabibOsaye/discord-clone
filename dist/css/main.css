@@ -211,14 +211,6 @@ Scrollbar body {
           flex: 0 0 auto;
 }
 
-.user-profile-image {
-  width: 32px;
-  height: 32px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
 .icon-profile {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,27 +244,59 @@ Scrollbar body {
   border-radius: 999px;
 }
 
+.user-profile-image {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
 .icon-status-mask {
-  -webkit-mask: url(/app/assets/icons/icon_profile_mask_32.svg);
-          mask: url(/app/assets/icons/icon_profile_mask_32.svg);
+  -webkit-mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+          mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+  -webkit-mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+          mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
 }
 
-.badge__online {
-  fill: #43b581;
-  -webkit-mask: url(/app/assets/icons/online_24dp.svg);
-          mask: url(/app/assets/icons/online_24dp.svg);
+.badge-online {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("/app/assets/icons/online_24dp.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
-.badge__idle {
-  fill: #faa61a;
-  -webkit-mask: url(/app/assets/icons/idle_24dp.svg);
-          mask: url(/app/assets/icons/idle_24dp.svg);
+.badge-idle {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("/app/assets/icons/idle_24dp.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
-.badge__do-not-disturb {
-  fill: #f04747;
-  -webkit-mask: url(/app/assets/icons/do_not_disturb_24dp.svg);
-          mask: url(/app/assets/icons/do_not_disturb_24dp.svg);
+.badge-do-not-disturb {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url("/app/assets/icons/do_not_disturb_24dp.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 .room-activity .admin {
@@ -2129,11 +2153,15 @@ body {
   background-color: rgba(79, 84, 92, 0.16);
 }
 
-.room-member-group .user-profile-image {
+.room-member-group .room-member-item .user-profile-image {
   margin-right: 12px;
 }
 
-.room-member-group .room-member-details {
+.room-member-group .room-member-item b {
+  font-weight: 600;
+}
+
+.room-member-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2158,7 +2186,7 @@ body {
           flex: 0 1 auto;
 }
 
-.room-member-group .room-member-details .room-member-name {
+.room-member-details .room-member-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2181,7 +2209,7 @@ body {
   height: 20px;
 }
 
-.room-member-group .room-member-details .room-member-name .member-username {
+.room-member-details .room-member-name .member-username {
   line-height: 20px;
   vertical-align: baseline;
   overflow: hidden;
@@ -2190,14 +2218,14 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 11ch;
           flex: 0 1 11ch;
+  margin-right: 4px;
 }
 
-.room-member-group .room-member-details .room-member-name .btn-container {
+.room-member-details .room-member-name .btn-container {
   height: 20px;
-  margin: 0 4px;
 }
 
-.room-member-group .room-member-details .room-member-status {
+.room-member-details .room-member-status {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2219,10 +2247,10 @@ body {
   font-weight: 500;
   vertical-align: baseline;
   height: 16px;
-  width: 100%;
+  overflow-x: hidden;
 }
 
-.room-member-group .room-member-details .room-member-status .status * {
+.room-member-details .room-member-status .status {
   line-height: 16px;
   vertical-align: baseline;
   overflow: hidden;
@@ -2231,18 +2259,11 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 20ch;
           flex: 0 1 20ch;
+  margin-right: 2px;
 }
 
-.room-member-group .room-member-details .room-member-status .status {
-  margin-right: 4px;
-}
-
-.room-member-group .room-member-details .room-member-status .btn-container {
+.room-member-details .room-member-status .btn-container {
   height: 20px;
   margin-right: 4px;
-}
-
-.room-member-group b {
-  font-weight: 600;
 }
 /*# sourceMappingURL=main.css.map */

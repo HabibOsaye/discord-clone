@@ -1346,73 +1346,69 @@ body {
       cursor: pointer;
       background-color: $background-hover-fill;
     }
+
+    .user-profile-image {
+      margin-right: 12px;
+    }
+
+    b {
+      font-weight: font-weight(semibold);
+    }
   }
 
-  .user-profile-image {
-    margin-right: 12px;
-  }
+}
 
-  .room-member-details {
-    @include flex-center(column);
+.room-member-details {
+  @include flex-center(column);
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 0 1 auto;
+
+  .room-member-name {
+    @include flex-center(row);
     justify-content: flex-start;
-    align-items: flex-start;
-    flex: 0 1 auto;
+    flex-wrap: nowrap;
+    font-weight: font-weight(medium);
+    height: 20px;
 
-    .room-member-name {
-      @include flex-center(row);
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      font-weight: font-weight(medium);
-      height: 20px;
-
-      .member-username {
-        line-height: 20px;
-        vertical-align: baseline;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        flex: 0 1 11ch;
-      }
-
-      .btn-container {
-        height: 20px;
-        margin: 0 4px;
-      }
-    }
-
-    .room-member-status {
-      @include flex-center(row);
-      justify-content: flex-start;
-      color: $channel-default;
-      font-size: font-size(small);
-      font-weight: font-weight(medium);
+    .member-username {
+      line-height: 20px;
       vertical-align: baseline;
-      height: 16px;
-      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 0 1 11ch;
+      margin-right: 4px;
+    }
 
-      .status * {
-        line-height: 16px;
-        vertical-align: baseline;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        flex: 0 1 20ch;
-      }
-
-      .status {
-        margin-right: 4px;
-      }
-
-      .btn-container {
-        height: 20px;
-        margin-right: 4px;
-      }
+    .btn-container {
+      height: 20px;
     }
   }
 
+  .room-member-status {
+    @include flex-center(row);
+    justify-content: flex-start;
+    color: $channel-default;
+    font-size: font-size(small);
+    font-weight: font-weight(medium);
+    vertical-align: baseline;
+    height: 16px;
+    overflow-x: hidden;
 
-  b {
-    font-weight: font-weight(semibold);
+    .status {
+      line-height: 16px;
+      vertical-align: baseline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 0 1 20ch;
+      margin-right: 2px;
+    }
+
+    .btn-container {
+      height: 20px;
+      margin-right: 4px;
+    }
   }
-
 }
