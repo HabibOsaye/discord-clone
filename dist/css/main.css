@@ -444,7 +444,7 @@ body {
   content: attr(data-tooltip-top);
   color: #dcddde;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #18191c;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -528,7 +528,7 @@ body {
   content: attr(data-tooltip-bottom);
   color: #dcddde;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #18191c;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -614,7 +614,7 @@ body {
   content: attr(data-tooltip-top-delay);
   color: #dcddde;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #18191c;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -2054,8 +2054,8 @@ body {
 }
 
 .chat-text-input .emoji-icon .btn-icon {
-  height: 22.5px;
-  width: 22.5px;
+  height: 22px;
+  width: 22px;
 }
 
 .chat-text-input .emoji-icon:hover {
@@ -2231,6 +2231,15 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 20ch;
           flex: 0 1 20ch;
+}
+
+.room-member-group .room-member-details .room-member-status .status {
+  margin-right: 4px;
+}
+
+.room-member-group .room-member-details .room-member-status .btn-container {
+  height: 20px;
+  margin-right: 4px;
 }
 
 .room-member-group b {

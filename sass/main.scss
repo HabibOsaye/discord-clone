@@ -173,7 +173,7 @@ body {
     content: attr(data-tooltip-top);
     color: $text-normal;
     font-size: font-size(medium);
-    font-weight: font-weight(semibold);
+    font-weight: font-weight(medium);
     background-color: $secondary-tooltip;
     width: max-content;
     max-width: 21ch;
@@ -241,7 +241,7 @@ body {
     content: attr(data-tooltip-bottom);
     color: $text-normal;
     font-size: font-size(medium);
-    font-weight: font-weight(semibold);
+    font-weight: font-weight(medium);
     background-color: $secondary-tooltip;
     width: max-content;
     max-width: 21ch;
@@ -311,7 +311,7 @@ body {
     content: attr(data-tooltip-top-delay);
     color: $text-normal;
     font-size: font-size(medium);
-    font-weight: font-weight(semibold);
+    font-weight: font-weight(medium);
     background-color: $secondary-tooltip;
     width: max-content;
     max-width: 21ch;
@@ -1297,8 +1297,8 @@ body {
       filter 250ms ease-out, transform 250ms $transition-tooltip;
 
     .btn-icon {
-      height: 22.5px;
-      width: 22.5px;
+      height: 22px;
+      width: 22px;
     }
 
     &:hover {
@@ -1319,7 +1319,7 @@ body {
 
 .room-member-group {
   width: 100%;
-  padding:0 8px;
+  padding: 0 8px;
   padding-top: 24px;
 
   .room-member-group-header {
@@ -1397,6 +1397,15 @@ body {
         text-overflow: ellipsis;
         white-space: nowrap;
         flex: 0 1 20ch;
+      }
+
+      .status {
+        margin-right: 4px;
+      }
+
+      .btn-container {
+        height: 20px;
+        margin-right: 4px;
       }
     }
   }
