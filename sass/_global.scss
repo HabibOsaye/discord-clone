@@ -93,7 +93,6 @@ Scrollbar body {
   display: flex;
   place-content: center;
   place-items: center;
-  display: block;
   height: 24px;
   width: 24px;
   flex: 0 0 auto;
@@ -152,8 +151,16 @@ Scrollbar body {
   max-width: 24px;
   max-height: 24px;
   border-radius: 999px;
-  // overflow: hidden;
 }
+
+.icon-profile-xs {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 999px;
+}
+
 
 // spacers 
 
