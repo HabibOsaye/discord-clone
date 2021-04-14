@@ -157,7 +157,6 @@ Scrollbar body {
   display: flex;
   place-content: center;
   place-items: center;
-  display: block;
   height: 24px;
   width: 24px;
   -webkit-box-flex: 0;
@@ -212,6 +211,14 @@ Scrollbar body {
   height: 24px;
   max-width: 24px;
   max-height: 24px;
+  border-radius: 999px;
+}
+
+.icon-profile-xs {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
   border-radius: 999px;
 }
 
@@ -324,7 +331,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   left: calc(100% + 8px);
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
@@ -334,7 +342,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   transform: scale(20%);
   -webkit-transform: scale(20%);
   -moz-transform: scale(20%);
@@ -363,6 +372,7 @@ body {
   width: 8px;
   background-color: #18191c;
   opacity: 1;
+  visibility: visible;
   left: calc(100% + 4px);
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -385,10 +395,9 @@ body {
   max-width: 21ch;
   line-height: 1rem;
   padding: 9px 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-radius: 6px;
   opacity: 1;
+  visibility: visible;
   left: calc(100% + 8px);
   transform: scale(100%);
   -webkit-transform: scale(100%);
@@ -410,7 +419,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
 }
@@ -419,7 +429,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   transform: scale(20%);
   -webkit-transform: scale(20%);
   -moz-transform: scale(20%);
@@ -439,6 +450,7 @@ body {
   width: 8px;
   background-color: #18191c;
   opacity: 1;
+  visibility: visible;
   bottom: calc(100% + 2px);
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -463,9 +475,8 @@ body {
   padding: 9px 10px;
   border-radius: 6px;
   margin: 0 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   opacity: 1;
+  visibility: visible;
   bottom: calc(100% + 6px);
   transform: scale(100%);
   -webkit-transform: scale(100%);
@@ -486,8 +497,9 @@ body {
 [data-tooltip-bottom]::before {
   position: absolute;
   content: '';
-  opacity: 1;
-  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
 }
@@ -495,7 +507,8 @@ body {
 [data-tooltip-bottom]::after {
   position: absolute;
   content: '';
-  opacity: 1;
+  opacity: 0;
+  visibility: hidden;
   z-index: 10;
   transform: scale(20%);
   -webkit-transform: scale(20%);
@@ -516,6 +529,7 @@ body {
   width: 8px;
   background-color: #18191c;
   opacity: 1;
+  visibility: visible;
   top: calc(100% + 4px);
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -547,6 +561,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   opacity: 1;
+  visibility: visible;
   top: calc(100% + 8px);
   transform: scale(100%);
   -webkit-transform: scale(100%);
@@ -568,7 +583,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
   -webkit-transition: all 50ms ease;
@@ -579,7 +595,8 @@ body {
   position: absolute;
   content: '';
   opacity: 0;
-  z-index: 10;
+  visibility: hidden;
+  z-index: 3;
   transform: scale(20%);
   -webkit-transform: scale(20%);
   -moz-transform: scale(20%);
@@ -601,7 +618,8 @@ body {
   width: 8px;
   background-color: #18191c;
   opacity: 1;
-  bottom: calc(100% + 2px);
+  visibility: visible;
+  bottom: calc(100% + 3px);
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
   transform: rotate(45deg);
@@ -630,7 +648,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   opacity: 1;
-  bottom: calc(100% + 6px);
+  visibility: visible;
+  bottom: calc(100% + 7px);
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
   transform: scale(100%);
@@ -750,6 +769,159 @@ body {
   border-radius: 16px;
 }
 
+.server-activity {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(20%);
+  -webkit-transform: scale(20%);
+  -moz-transform: scale(20%);
+  -o-transform: scale(20%);
+  -ms-transform: scale(20%);
+  -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32), -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+}
+
+.server-activity::before {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  -webkit-transition: all 50ms ease;
+  transition: all 50ms ease;
+}
+
+.server-activity .server-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-right: 16px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.server-activity .server-title .server-name {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 24px;
+  vertical-align: baseline;
+  padding-left: 8px;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.server-activity .server-title .partner-badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  margin-top: 1px;
+}
+
+.server-activity .server-title .partner-badge .icon-partner-badge-base {
+  position: relative;
+  color: #6f85d2;
+}
+
+.server-activity .server-title .partner-badge .icon-partner-badge-top {
+  position: absolute;
+  display: none;
+  color: #fff;
+  z-index: 1;
+}
+
+.server-activity .server-activity-members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #8e9297;
+}
+
+.server-activity .server-activity-members .member-list {
+  display: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 4px;
+}
+
+.server-activity .server-activity-members .member-list img {
+  position: relative;
+  margin-right: -3px;
+  -webkit-box-shadow: 0 0 0 3px #18191c;
+          box-shadow: 0 0 0 3px #18191c;
+  z-index: 1;
+}
+
+.item-status:hover .server-activity {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #dcddde;
+  line-height: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 20ch;
+  background-color: #18191c;
+  padding: 9px 10px;
+  border-radius: 6px;
+  left: calc(100% + 20px);
+  opacity: 1;
+  z-index: 3;
+  visibility: visible;
+  transform: scale(100%);
+  -webkit-transform: scale(100%);
+  -moz-transform: scale(100%);
+  -o-transform: scale(100%);
+  -ms-transform: scale(100%);
+}
+
+.item-status:hover .server-activity::before {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 8px;
+  width: 8px;
+  background-color: #18191c;
+  right: calc(100% - 4px);
+  opacity: 1;
+  z-index: 3;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
 .btn-nav-left {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,7 +999,7 @@ body {
   height: 135px;
   background-color: black;
   background-image: url("/app/assets/img/background.jpg");
-  background-position: top;
+  background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
   -webkit-user-select: none;
@@ -843,7 +1015,7 @@ body {
   color: currentColor;
 }
 
-.server-header .btn-options {
+.server-header .btn-icon {
   color: #dcddde;
 }
 
@@ -865,10 +1037,11 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 48px;
-  padding-left: 12px;
+  padding-left: 16px;
   padding-right: 14px;
   color: #fff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+  -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
+          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
 }
 
 .server-profile .server-title {
@@ -885,11 +1058,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-right: 16px;
+  overflow: hidden;
 }
 
 .server-profile .server-title .server-name {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   vertical-align: baseline;
   padding-left: 4px;
@@ -912,14 +1087,15 @@ body {
 }
 
 .server-profile .partner-badge .icon-partner-badge-base {
-  width: 16px;
-  height: 16px;
+  position: relative;
   color: #6f85d2;
+  color: orange;
 }
 
 .server-profile .partner-badge .icon-partner-badge-top {
+  display: none;
   position: absolute;
-  width: 14px;
+  width: 18px;
   z-index: 1;
 }
 
@@ -1690,6 +1866,7 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+  overflow-x: hidden;
 }
 
 .chat {
