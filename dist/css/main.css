@@ -299,18 +299,6 @@ Scrollbar body {
   z-index: 2;
 }
 
-.room-activity .admin {
-  color: #f1c40f;
-}
-
-.room-activity .moderator {
-  color: #8257af;
-}
-
-.room-activity .normal {
-  color: #22ab92;
-}
-
 *,
 *::before,
 *::after {
@@ -2102,6 +2090,18 @@ body {
   grid-row: 2 / 3;
 }
 
+.room-activity .admin {
+  color: #f1c40f;
+}
+
+.room-activity .moderator {
+  color: #8257af;
+}
+
+.room-activity .normal {
+  color: #22ab92;
+}
+
 .room-member-group {
   width: 100%;
   padding: 0 8px;
@@ -2266,4 +2266,3 @@ body {
   height: 20px;
   margin-right: 4px;
 }
-/*# sourceMappingURL=main.css.map */

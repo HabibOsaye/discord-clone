@@ -1315,6 +1315,18 @@ body {
 
   grid-column: 4 / 5;
   grid-row: 2 / 3;
+
+  .admin {
+    color: $secondary-yellow;
+  }
+
+  .moderator {
+    color: $secondary-purple;
+  }
+
+  .normal {
+    color: $secondary-green;
+  }
 }
 
 .room-member-group {
@@ -1328,7 +1340,6 @@ body {
     font-weight: font-weight(semibold);
     text-transform: uppercase;
     line-height: 16px;
-    // margin-bottom: 2px;
     padding-left: 8px;
     user-select: none;
   }

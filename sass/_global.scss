@@ -228,18 +228,3 @@ Scrollbar body {
   bottom: 0;
   z-index: 2;
 }
-
-.room-activity {
-
-  .admin {
-    color: $secondary-yellow;
-  }
-
-  .moderator {
-    color: $secondary-purple;
-  }
-
-  .normal {
-    color: $secondary-green;
-  }
-}
