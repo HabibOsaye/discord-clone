@@ -258,10 +258,16 @@ body {
 }
 
 .icon-status-mask {
-  -webkit-mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
-          mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
-  -webkit-mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
-          mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+  -webkit-mask: url("/app/assets/icons/icon_profile_mask_32.svg#mask") 0 0/32px 32px;
+          mask: url("/app/assets/icons/icon_profile_mask_32.svg#mask") 0 0/32px 32px;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  mask-image: url("/app/assets/icons/icon_profile_mask_32.svg#mask");
+  -webkit-mask-image: url("/app/assets/icons/icon_profile_mask_32.svg#mask");
 }
 
 .badge-online {
@@ -745,7 +751,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-top: 2px;
+  padding-top: 1px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -945,9 +951,8 @@ body {
 }
 
 .server-header {
-  height: 135px;
+  height: 48px;
   background-color: #2f3136;
-  background-image: url("/app/assets/img/background.jpg");
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1008,8 +1013,6 @@ body {
           flex-direction: row;
   padding-right: 16px;
   overflow: hidden;
-  -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.8));
-          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.8));
 }
 
 .server-profile .server-title .server-name {

@@ -187,12 +187,16 @@ body {
   position: relative;
   width: 32px;
   height: 32px;
-  flex: 0 0 auto; 
+  flex: 0 0 auto;
 }
 
 .icon-status-mask {
-  mask: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
-  mask-image: url(/app/assets/icons/icon_profile_mask_32.svg#icon-profile-mask);
+  mask: url('/app/assets/icons/icon_profile_mask_32.svg#mask') 0 0/32px 32px;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url('/app/assets/icons/icon_profile_mask_32.svg#mask');
+  -webkit-mask-image: url('/app/assets/icons/icon_profile_mask_32.svg#mask');
 }
 
 .badge-online {

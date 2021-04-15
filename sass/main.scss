@@ -388,7 +388,7 @@ body {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      padding-top: 2px;
+      padding-top: 1px;
       flex: 0 1 auto;
     }
 
@@ -556,10 +556,10 @@ body {
 }
 
 .server-header {
-  // height: 48px;
-  height: 135px;
+  height: 48px;
+  // height: 135px;
   background-color: $background-panel-grey;
-  background-image: url('/app/assets/img/background.jpg');
+  // background-image: url('/app/assets/img/background.jpg');
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -584,12 +584,12 @@ body {
   padding-left: 16px;
   padding-right: 14px;
   color: #fff;
+  // filter: drop-shadow(0 1px 1px hsla(0, 0%, 0%, 0.8));
 
   .server-title {
     @include flex-center(row);
     padding-right: 16px;
     overflow: hidden;
-    filter: drop-shadow(0 1px 1px hsla(0, 0%, 0%, 0.8));
 
     .server-name {
       font-size: 1rem;
