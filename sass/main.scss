@@ -186,7 +186,6 @@ body {
   }
 }
 
-
 // data-tooltip-bottom (bottom position)
 
 [data-tooltip-bottom] {
@@ -417,8 +416,7 @@ body {
   }
 }
 
-// status activity
-
+// tooltip server activity
 
 .server-activity {
   position: absolute;
@@ -446,15 +444,18 @@ body {
     overflow: hidden;
 
     .server-name {
+      display: flex;
+      align-items: center;
       font-size: 1rem;
       font-weight: font-weight(semibold);
-      line-height: 24px;
+      line-height: 20px;
       vertical-align: baseline;
       margin: 0;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       padding-left: 4px;
+      padding-top: 2px;
       flex: 0 1 auto;
     }
 
@@ -464,7 +465,6 @@ body {
       place-content: center;
       padding-right: 4px;
       padding-left: 2px;
-      margin-top: 1px;
 
       .icon-partner-badge-base {
         position: relative;

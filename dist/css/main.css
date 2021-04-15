@@ -812,15 +812,22 @@ body {
 }
 
 .server-activity .server-title .server-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 20px;
   vertical-align: baseline;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   padding-left: 4px;
+  padding-top: 2px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -834,7 +841,6 @@ body {
   place-content: center;
   padding-right: 4px;
   padding-left: 2px;
-  margin-top: 1px;
 }
 
 .server-activity .server-title .partner-badge .icon-partner-badge-base {
