@@ -53,7 +53,7 @@ span {
   margin: 0;
 }
 
-Scrollbar body {
+body {
   scrollbar-base-color: #181818;
   scrollbar-face-color: #404040;
   scrollbar-3dlight-color: #181818;
@@ -65,8 +65,12 @@ Scrollbar body {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
-  background: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: palevioletred;
 }
 
 ::-webkit-scrollbar-button {
@@ -268,7 +272,7 @@ Scrollbar body {
   background-image: url("/app/assets/icons/online_24dp.svg");
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }
@@ -281,7 +285,7 @@ Scrollbar body {
   background-image: url("/app/assets/icons/idle_24dp.svg");
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }
@@ -294,7 +298,7 @@ Scrollbar body {
   background-image: url("/app/assets/icons/do_not_disturb_24dp.svg");
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }
@@ -304,8 +308,6 @@ Scrollbar body {
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Whitney', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -411,7 +413,7 @@ body {
   content: '';
   opacity: 0;
   visibility: hidden;
-  z-index: 3;
+  z-index: 10;
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
 }
@@ -421,7 +423,7 @@ body {
   content: '';
   opacity: 0;
   visibility: hidden;
-  z-index: 3;
+  z-index: 10;
   transform: scale(20%);
   -webkit-transform: scale(20%);
   -moz-transform: scale(20%);
@@ -995,8 +997,15 @@ body {
 
 .panel {
   position: relative;
-  background-color: #2f3136;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   color: #fff;
+  background-color: #2f3136;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1010,11 +1019,9 @@ body {
 }
 
 .server-header {
-  min-height: 48px;
-  height: 135px;
-  background-color: black;
-  background-image: url("/app/assets/img/background.jpg");
-  background-position: top;
+  height: 48px;
+  background-color: #2f3136;
+  background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
   -webkit-user-select: none;
@@ -1056,8 +1063,6 @@ body {
   padding-left: 16px;
   padding-right: 14px;
   color: #fff;
-  -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
-          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
 }
 
 .server-profile .server-title {
@@ -1136,38 +1141,19 @@ body {
   z-index: 1;
 }
 
-.panel-room {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.channel {
   padding-right: 8px;
   padding-top: 16px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  height: 100%;
 }
 
-.panel-room .panel-room-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.channel .channel-group {
   width: 100%;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .room-header {
@@ -1223,14 +1209,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
   line-height: 20px;
   padding-left: 8px;
@@ -1260,13 +1248,14 @@ body {
           justify-content: space-between;
   align-items: center;
   color: #8e9297;
+  font-weight: 500;
+  text-decoration: none;
   width: 100%;
+  min-height: 32px;
   height: 32px;
   padding: 0 8px;
   padding-right: 5px;
   border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
 }
 
 .room-subgroup .container .hidden {
@@ -1310,23 +1299,27 @@ body {
   color: #72767d;
 }
 
-.room-subgroup .hidden .icon-fill-default {
+.room-subgroup .container .hidden .icon-fill-default {
   color: #b9bbbe;
 }
 
-.room-subgroup .hidden:hover .icon-fill-default {
+.room-subgroup .container .hidden:hover .icon-fill-default {
   color: #dcddde;
 }
 
-.room-subgroup.active .container {
+.room-subgroup .container.active {
   background-color: rgba(79, 84, 92, 0.32);
 }
 
-.room-subgroup.active .container .hidden {
+.room-subgroup .container.active .hidden {
   visibility: visible;
 }
 
-.room-subgroup.update::after {
+.room-subgroup .container.update {
+  color: #fff;
+}
+
+.room-subgroup .container.update::after {
   position: absolute;
   display: block;
   content: '';
@@ -1336,15 +1329,10 @@ body {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   left: 0;
-  z-index: 1;
-}
-
-.room-subgroup.update .container {
-  color: #fff;
+  z-index: 2;
 }
 
 .room-stream {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1533,14 +1521,14 @@ body {
           flex-direction: row;
   height: 48px;
   background-color: #292B2F;
-  bottom: 0;
+  top: calc(100% - 48px);
   left: 0;
   right: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  z-index: 3;
+  z-index: 2;
 }
 
 .panel-footer .panel-user-settings {
@@ -1562,8 +1550,8 @@ body {
           justify-content: flex-start;
   padding: 4px 8px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .panel-footer .panel-user-settings .user-profile {
@@ -2090,15 +2078,15 @@ body {
   grid-row: 2 / 3;
 }
 
-.room-activity .admin {
+.room-activity .yellow {
   color: #f1c40f;
 }
 
-.room-activity .moderator {
+.room-activity .purple {
   color: #8257af;
 }
 
-.room-activity .normal {
+.room-activity .green {
   color: #22ab92;
 }
 
@@ -2175,12 +2163,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: 34px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -2206,11 +2193,9 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   font-weight: 500;
-  height: 20px;
 }
 
 .room-member-details .room-member-name .member-username {
-  line-height: 20px;
   vertical-align: baseline;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2222,7 +2207,7 @@ body {
 }
 
 .room-member-details .room-member-name .btn-container {
-  height: 20px;
+  height: 16px;
 }
 
 .room-member-details .room-member-status {
@@ -2246,8 +2231,10 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   vertical-align: baseline;
-  height: 16px;
-  overflow-x: hidden;
+  overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .room-member-details .room-member-status .status {
@@ -2259,7 +2246,7 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 20ch;
           flex: 0 1 20ch;
-  margin-right: 2px;
+  padding-right: 2px;
 }
 
 .room-member-details .room-member-status .btn-container {

@@ -1,4 +1,4 @@
-Scrollbar body {
+body {
   // IE scrollbar styles
   scrollbar-base-color: #181818;
   scrollbar-face-color: #404040;
@@ -12,8 +12,13 @@ Scrollbar body {
 
 // Google Chrome (Windows) scrollbar styles
 ::-webkit-scrollbar {
-  width: 20px;
-  background: transparent;
+  // display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: palevioletred;
 }
 
 ::-webkit-scrollbar-button {
@@ -198,7 +203,7 @@ Scrollbar body {
   background-image: url('/app/assets/icons/online_24dp.svg');
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }
@@ -211,7 +216,7 @@ Scrollbar body {
   background-image: url('/app/assets/icons/idle_24dp.svg');
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }
@@ -224,7 +229,7 @@ Scrollbar body {
   background-image: url('/app/assets/icons/do_not_disturb_24dp.svg');
   background-position: center;
   background-repeat: no-repeat;
-  right: 0;
+  right: 0.5px;
   bottom: 0;
   z-index: 2;
 }

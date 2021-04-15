@@ -6,8 +6,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Whitney', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -135,7 +133,7 @@ body {
     content: '';
     opacity: 0;
     visibility: hidden;
-    z-index: 3;
+    z-index: 10;
     transition: all 50ms ease;
   }
 
@@ -144,7 +142,7 @@ body {
     content: '';
     opacity: 0;
     visibility: hidden;
-    z-index: 3;
+    z-index: 10;
     @include transform-scale(20%);
     transition:
       opacity 50ms ease-out,
@@ -605,20 +603,33 @@ body {
 
 .panel {
   position: relative;
-  background-color: $background-panel-grey;
+  display: flex;
+  flex-flow: column;
   color: #fff;
+  background-color: $background-panel-grey;
+  // overflow-y: visible;
+  // overflow-x: visible;
   user-select: none;
+
+  // border: 1px solid blue;
 
   grid-column: 2 / 3;
   grid-row: 1 / 3;
+
+  // > .container {
+  //   width: 100%;
+  //   // border: 1px solid yellow;
+  //   border-left: none;
+  //   background-color: rgb(5, 55, 55);
+  // }
 }
 
 .server-header {
-  min-height: 48px;
-  height: 135px;
-  background-color: black;
-  background-image: url('/app/assets/img/background.jpg');
-  background-position: top;
+  height: 48px;
+  // height: 135px;
+  background-color: $background-panel-grey;
+  // background-image: url('/app/assets/img/background.jpg');
+  background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
   user-select: none;
@@ -642,7 +653,7 @@ body {
   padding-left: 16px;
   padding-right: 14px;
   color: #fff;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
+  // filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
 
   .server-title {
     @include flex-center(row);
@@ -683,20 +694,17 @@ body {
   }
 }
 
-.panel-room {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
+.channel {
   padding-right: 8px;
   padding-top: 16px;
   user-select: none;
+  // background-color: rgba(21, 18, 51, 0.624);
+  height: 100%;
 
-  .panel-room-group {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
+  .channel-group {
     width: 100%;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    // background-color: rgba(0, 0, 0, 0.624);
   }
 }
 
@@ -730,9 +738,9 @@ body {
 
 .room-subgroup {
   position: relative;
-  @include flex-center(row);
+  @include flex-center(column);
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   line-height: 20px;
   padding-left: 8px;
@@ -740,21 +748,23 @@ body {
   user-select: none;
 
   .container {
+    // position: relative;
     @include flex-center(row);
     justify-content: space-between;
     align-items: center;
     color: $channel-default;
+    font-weight: font-weight(medium);
+    text-decoration: none;
     width: 100%;
+    min-height: 32px;
     height: 32px;
     padding: 0 8px;
     padding-right: 5px;
     border-radius: 4px;
-    font-weight: font-weight(medium);
-    text-decoration: none;
+    // border: 1px solid orange;
 
     .hidden {
       visibility: hidden;
-      // justify-self: flex-end;
     }
 
     &:hover {
@@ -792,47 +802,52 @@ body {
 
 .room-subgroup {
 
-  .hidden {
+  .container {
 
-    .icon-fill-default {
-      color: $icon-state-normal;
-    }
+    .hidden {
 
-    &:hover {
       .icon-fill-default {
-        color: $icon-state-hover;
+        color: $icon-state-normal;
+      }
+
+      &:hover {
+        .icon-fill-default {
+          color: $icon-state-hover;
+        }
       }
     }
-  }
 
-  &.active {
+    &.active {
 
-    .container {
+      // .container {
       background-color: $background-active-fill;
 
       .hidden {
         visibility: visible;
       }
-    }
-  }
 
-  &.update {
-
-    &::after {
-      position: absolute;
-      display: block;
-      content: '';
-      height: 8px;
-      width: 4px;
-      background-color: #fff;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-      left: 0;
-      z-index: 1;
+      // }
     }
 
-    .container {
+    &.update {
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 8px;
+        width: 4px;
+        background-color: #fff;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        // left: -8px;
+        left: 0;
+        z-index: 2;
+      }
+
+      // .container {
       color: #fff;
+      // }
     }
   }
 }
@@ -840,7 +855,7 @@ body {
 // room stream
 
 .room-stream {
-  position: absolute;
+  // position: relative;
   display: flex;
   flex-flow: column;
   width: 100%;
@@ -848,8 +863,9 @@ body {
   right: 0;
   margin-top: 1px;
   padding-left: 32px;
+  // border: 1px solid cyan;
 
-  &> :first-child {
+  & > :first-child {
     margin-top: 2px;
   }
 
@@ -966,17 +982,17 @@ body {
   @include flex-center(row);
   height: 48px;
   background-color: #292B2F;
-  bottom: 0;
+  top: calc(100% - 48px);
   left: 0;
   right: 0;
   user-select: none;
-  z-index: 3;
+  z-index: 2;
 
   .panel-user-settings {
     @include flex-center(row);
     justify-content: flex-start;
     padding: 4px 8px;
-    flex: 0 0 100%;
+    flex: 0 0 auto;
 
     .user-profile {
       @include flex-center(row);
@@ -1316,15 +1332,15 @@ body {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 
-  .admin {
+  .yellow {
     color: $secondary-yellow;
   }
 
-  .moderator {
+  .purple {
     color: $secondary-purple;
   }
 
-  .normal {
+  .green {
     color: $secondary-green;
   }
 }
@@ -1371,8 +1387,9 @@ body {
 
 .room-member-details {
   @include flex-center(column);
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
+  height: 34px;
   flex: 0 1 auto;
 
   .room-member-name {
@@ -1380,10 +1397,8 @@ body {
     justify-content: flex-start;
     flex-wrap: nowrap;
     font-weight: font-weight(medium);
-    height: 20px;
 
     .member-username {
-      line-height: 20px;
       vertical-align: baseline;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1393,7 +1408,7 @@ body {
     }
 
     .btn-container {
-      height: 20px;
+      height: 16px;
     }
   }
 
@@ -1404,8 +1419,8 @@ body {
     font-size: font-size(small);
     font-weight: font-weight(medium);
     vertical-align: baseline;
-    height: 16px;
-    overflow-x: hidden;
+    overflow: hidden;
+    flex: 0 1 auto;
 
     .status {
       line-height: 16px;
@@ -1414,7 +1429,7 @@ body {
       text-overflow: ellipsis;
       white-space: nowrap;
       flex: 0 1 20ch;
-      margin-right: 2px;
+      padding-right: 2px;
     }
 
     .btn-container {
