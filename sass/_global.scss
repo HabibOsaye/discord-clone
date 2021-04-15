@@ -1,40 +1,35 @@
-body {
-  // IE scrollbar styles
-  scrollbar-base-color: #181818;
-  scrollbar-face-color: #404040;
-  scrollbar-3dlight-color: #181818;
-  scrollbar-highlight-color: #404040;
-  scrollbar-track-color: #181818;
-  scrollbar-arrow-color: #404040;
-  scrollbar-shadow-color: #181818;
-  scrollbar-darkshadow-color: #181818;
-}
+// body {
+//   // IE scrollbar styles
+//   scrollbar-base-color: #181818;
+//   scrollbar-face-color: #404040;
+//   scrollbar-3dlight-color: #181818;
+//   scrollbar-highlight-color: #404040;
+//   scrollbar-track-color: #181818;
+//   scrollbar-arrow-color: #404040;
+//   scrollbar-shadow-color: #181818;
+//   scrollbar-darkshadow-color: #181818;
+// }
 
-// Google Chrome (Windows) scrollbar styles
-::-webkit-scrollbar {
-  // display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  background: palevioletred;
-}
+// // Google Chrome (Windows) scrollbar styles
+// ::-webkit-scrollbar {
+//   width: 16px;
+// }
 
-::-webkit-scrollbar-button {
-  display: none;
-}
+// ::-webkit-scrollbar-button {
+//   // display: none;
+// }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+//   background-color: #181818;
+// }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 100px;
-  background: #aaaaaacc;
-  background-clip: content-box;
-  border: solid 8px transparent;
-}
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 100px;
+//   background: #aaaaaacc;
+//   background-clip: content-box;
+//   border: solid 8px transparent;
+// }
 
 .btn-container {
   display: flex;
@@ -85,11 +80,35 @@ body {
 }
 
 .btn-hover {
-  border-radius: 4px;
-
   &:hover {
     background-color: $background-active-fill;
   }
+}
+
+.btn-hover-0 {
+  &:hover {
+    background-color: $background-hover-fill;
+  }
+}
+
+.round-none {
+  border-radius: 0;
+}
+
+.round {
+  border-radius: 4px;
+}
+
+.round-start {
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.round-end {
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 // icon
@@ -173,6 +192,14 @@ body {
   }
 }
 
+.icon-profile-md {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 999px;
+}
+
 .icon-profile-sm {
   width: 24px;
   height: 24px;
@@ -236,4 +263,18 @@ body {
   right: 0.5px;
   bottom: 0;
   z-index: 2;
+}
+
+//
+
+.yellow {
+  color: $secondary-yellow;
+}
+
+.purple {
+  color: $secondary-purple;
+}
+
+.green {
+  color: $secondary-green;
 }
