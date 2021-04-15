@@ -320,85 +320,6 @@ body {
   line-height: 20px;
 }
 
-[data-tooltip-nav]::before {
-  position: absolute;
-  content: '';
-  opacity: 0;
-  visibility: hidden;
-  z-index: 3;
-  left: calc(100% + 8px);
-  -webkit-transition: all 50ms ease;
-  transition: all 50ms ease;
-}
-
-[data-tooltip-nav]::after {
-  position: absolute;
-  content: '';
-  opacity: 0;
-  visibility: hidden;
-  z-index: 3;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
-  -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32), -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
-}
-
-[data-tooltip-nav]:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-[data-tooltip-nav]:hover::before {
-  position: absolute;
-  display: block;
-  content: '';
-  height: 8px;
-  width: 8px;
-  background-color: #18191c;
-  opacity: 1;
-  visibility: visible;
-  left: calc(100% + 4px);
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-}
-
-[data-tooltip-nav]:hover::after {
-  position: absolute;
-  display: block;
-  content: attr(data-tooltip-nav);
-  color: #dcddde;
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: #18191c;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 21ch;
-  line-height: 1rem;
-  padding: 9px 10px;
-  border-radius: 6px;
-  opacity: 1;
-  visibility: visible;
-  left: calc(100% + 8px);
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
-}
-
 [data-tooltip-top] {
   position: relative;
   display: -webkit-box;
@@ -803,8 +724,6 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-right: 16px;
-  margin-bottom: 8px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -820,13 +739,12 @@ body {
           align-items: center;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1;
   vertical-align: baseline;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-left: 4px;
   padding-top: 2px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -839,8 +757,8 @@ body {
   display: flex;
   place-items: center;
   place-content: center;
-  padding-right: 4px;
-  padding-left: 2px;
+  margin-left: 2px;
+  margin-right: 8px;
 }
 
 .server-activity .server-title .partner-badge .icon-partner-badge-base {
@@ -856,7 +774,7 @@ body {
   z-index: 1;
 }
 
-.server-activity .server-activity-members {
+.server-activity .server-activity-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -867,13 +785,15 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
+  margin-top: 8px;
+  margin-right: 4px;
 }
 
-.server-activity .server-activity-members .btn-icon {
+.server-activity .server-activity-group .btn-icon {
   color: #b9bbbe;
 }
 
-.server-activity .server-activity-members .member-list {
+.server-activity .server-activity-group .member-list {
   position: relative;
   display: inherit;
   -webkit-box-align: center;
@@ -885,7 +805,7 @@ body {
           flex: 0 1 auto;
 }
 
-.server-activity .server-activity-members .member-list img {
+.server-activity .server-activity-group .member-list img {
   position: relative;
   margin-right: -4px;
   -webkit-box-shadow: 0 0 0 3px #18191c;
@@ -1025,8 +945,9 @@ body {
 }
 
 .server-header {
-  height: 48px;
+  height: 135px;
   background-color: #2f3136;
+  background-image: url("/app/assets/img/background.jpg");
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1087,6 +1008,8 @@ body {
           flex-direction: row;
   padding-right: 16px;
   overflow: hidden;
+  -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.8));
 }
 
 .server-profile .server-title .server-name {
@@ -1284,7 +1207,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 16ch;
+  min-width: 16ch;
+  overflow-x: hidden;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
