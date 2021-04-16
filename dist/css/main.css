@@ -1918,6 +1918,7 @@ body {
   background-color: #36393f;
   padding-left: 16px;
   overflow: hidden;
+  z-index: 0;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
@@ -1968,7 +1969,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 }
 
 .chat-unread-banner:hover {

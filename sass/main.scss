@@ -1135,6 +1135,7 @@ body {
   background-color: #36393f;
   padding-left: 16px;
   overflow: hidden;
+  z-index: 0;
 
   grid-column: 3 / 4;
   grid-row: 2 / 3;
@@ -1163,7 +1164,7 @@ body {
   right: 30px;
   user-select: none;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 
   &:hover {
     cursor: pointer;
