@@ -520,7 +520,7 @@ body {
   content: '';
   opacity: 0;
   visibility: hidden;
-  z-index: 3;
+  z-index: 10;
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
 }
@@ -1708,7 +1708,7 @@ body {
   padding-right: 8px;
   -webkit-box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
           box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
-  z-index: 3;
+  z-index: 1;
   grid-column: 3 / -1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -1968,7 +1968,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   overflow: hidden;
-  z-index: 2;
+  z-index: 0;
 }
 
 .chat-unread-banner:hover {

@@ -169,7 +169,7 @@ body {
     content: '';
     opacity: 0;
     visibility: hidden;
-    z-index: 3;
+    z-index: 10;
     transition: all 50ms ease;
   }
 
@@ -1001,7 +1001,7 @@ body {
   padding: 0 12px;
   padding-right: 8px;
   box-shadow: $border-bottom-shadow;
-  z-index: 3;
+  z-index: 1;
 
   grid-column: 3 / -1;
   grid-row: 1 / 2;
@@ -1159,13 +1159,11 @@ body {
   border-bottom-right-radius: 8px;
   top: 48px;
   top: 0;
-  // left: 240px + 72px + 16px;
-  // right: 240px + 16px + 13px;
   left: 16px;
   right: 30px;
   user-select: none;
   overflow: hidden;
-  z-index: 2;
+  z-index: 0;
 
   &:hover {
     cursor: pointer;
