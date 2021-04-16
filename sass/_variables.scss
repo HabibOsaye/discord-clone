@@ -3,17 +3,14 @@
 $background-black: #202225;
 $background-grey: #36393f;
 $background-panel-grey: #2f3136;
-
 $primary-blue: #6f85d2;
 $primary-green: #43b581;
-
 $secondary-green: #22ab92;
 $secondary-purple: #8257af;
 $secondary-red: #f04747;
 $secondary-orange: #faa61a;
 $secondary-blue: #6e84d1;
 $secondary-yellow: #f1c40f;
-
 $secondary-tooltip: #18191c;
 
 
@@ -35,16 +32,15 @@ $icon-state-active: #fff;
 
 // hover
 
-$background-active-fill: rgba(79,84,92,0.32);
-$background-hover-fill: rgba(79,84,92,0.16);
+$background-active-fill: rgba(79, 84, 92, 0.32);
+$background-hover-fill: rgba(79, 84, 92, 0.16);
 
 
 // fonts
 
-$font-size: (
-  // "xlarge": 1.2rem,
+$font-size: ("xlarge": 1.2rem,
   "large": 1.125rem,
-	"default": 1rem,
+  "default": 1rem,
   "medium": 0.875rem,
   "small": 0.75rem,
 );
@@ -55,8 +51,7 @@ $font-size: (
 
 // font-weight
 
-$font-weight: (
-	"light": 300,
+$font-weight: ("light": 300,
   "normal": 400,
   "medium": 500,
   "semibold": 600,
@@ -70,7 +65,9 @@ $font-weight: (
 // unit
 
 $opacity: 0.54;
-$border-bottom-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+$border-bottom-shadow: 0 1px 0 rgba(4, 4, 5, 0.2),
+0 1.5px 0 rgba(6, 6, 7, 0.05),
+0 2px 0 rgba(4, 4, 5, 0.05);
 // $tooltip-shadow: ; 
 
 

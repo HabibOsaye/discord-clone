@@ -1291,7 +1291,7 @@ body {
     color: #fff;
     text-align: center;
     padding-top: 16px;
-		padding-bottom: 16px;
+    padding-bottom: 16px;
     justify-self: flex-end;
 
     .default-header {
@@ -1314,9 +1314,9 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     color: #fff;
-		width: 100%;
+    width: 100%;
     padding-top: 20px;
-		margin-bottom: 20px;
+    margin-bottom: 20px;
     padding-right: 48px;
 
     .message-options {
@@ -1340,11 +1340,11 @@ body {
     .message-timestamp-top {
       position: absolute;
       @include flex-center(row);
-			height: 11px;
+      height: 11px;
       bottom: 100%;
       left: 0;
       right: 0;
-			padding: 0;
+      padding: 0;
 
       .timestamp-date {
         color: $text-chat;
@@ -1369,7 +1369,7 @@ body {
         @include flex-center(row);
         justify-content: flex-start;
         align-items: flex-end;
-				color: #fff;
+        color: #fff;
         margin-bottom: 4px;
 
         .username {
@@ -1377,7 +1377,11 @@ body {
           font-size: font-size(default);
           font-weight: font-weight(medium);
           margin-right: 8px;
-          &:hover {text-decoration: underline; cursor: pointer;}
+
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
 
         .message-timestamp {
@@ -1406,8 +1410,8 @@ body {
     margin-right: 16px;
   }
 
-  > .message-item:nth-child(2) {
-		
+  >.message-item:nth-child(2) {
+
     & .timestamp-date {
       display: none;
       visibility: none;
