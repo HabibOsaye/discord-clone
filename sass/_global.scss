@@ -1,35 +1,19 @@
-// body {
-//   // IE scrollbar styles
-//   scrollbar-base-color: #181818;
-//   scrollbar-face-color: #404040;
-//   scrollbar-3dlight-color: #181818;
-//   scrollbar-highlight-color: #404040;
-//   scrollbar-track-color: #181818;
-//   scrollbar-arrow-color: #404040;
-//   scrollbar-shadow-color: #181818;
-//   scrollbar-darkshadow-color: #181818;
-// }
 
-// // Google Chrome (Windows) scrollbar styles
-// ::-webkit-scrollbar {
-//   width: 16px;
-// }
+// Google Chrome (Windows) scrollbar styles
+::-webkit-scrollbar {
+  width: 16px;
+}
 
-// ::-webkit-scrollbar-button {
-//   // display: none;
-// }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-//   background-color: #181818;
-// }
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background: #202225;
+}
 
-// ::-webkit-scrollbar-thumb {
-//   border-radius: 100px;
-//   background: #aaaaaacc;
-//   background-clip: content-box;
-//   border: solid 8px transparent;
-// }
+// btn
 
 .btn-container {
   display: flex;
@@ -227,7 +211,7 @@
 }
 
 .badge-online {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;
@@ -240,7 +224,7 @@
 }
 
 .badge-idle {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;
@@ -253,7 +237,7 @@
 }
 
 .badge-do-not-disturb {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;

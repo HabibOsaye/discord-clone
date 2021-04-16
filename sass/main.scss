@@ -21,42 +21,74 @@ body {
   line-height: 20px;
 }
 
-// ****** @MIXIN ****** //
-
-// center container
-
-@mixin flex-center($flex-direction) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: $flex-direction;
-}
-
-// transform: rotate() | prefix
-
-@mixin transform-rotate($value) {
-  transform: rotate($value);
-  -webkit-transform: rotate($value);
-  -moz-transform: rotate($value);
-  -o-transform: rotate($value);
-  -ms-transform: rotate($value);
-}
-
-// transform: scale() | prefix
-
-@mixin transform-scale($value) {
-  transform: scale($value);
-  -webkit-transform: scale($value);
-  -moz-transform: scale($value);
-  -o-transform: scale($value);
-  -ms-transform: scale($value);
-}
-
-// ******************** //
-
 
 // ****** DATA-TOOLTIPS ****** //
 
+// data-tooltip-status (bagde, top position)
+
+[data-tooltip-status] {
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: all 50ms ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    @include transform-scale(20%);
+    transition:
+      opacity 50ms ease-out,
+      transform 50ms $transition-tooltip;
+  }
+}
+
+[data-tooltip-status]:hover {
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: $secondary-tooltip;
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 4px);
+    @include transform-rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: attr(data-tooltip-status);
+    color: $text-normal;
+    font-size: font-size(medium);
+    font-weight: font-weight(medium);
+    background-color: $secondary-tooltip;
+    width: max-content;
+    max-width: 21ch;
+    line-height: 1rem;
+    padding: 9px 10px;
+    border-radius: 6px;
+    margin: 0 16px;
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 8px);
+    @include transform-scale(100%);
+  }
+}
 
 // data-tooltip-top (top position)
 
@@ -65,7 +97,6 @@ body {
   display: flex;
   place-content: center;
   place-items: center;
-
 
   &::before {
     position: absolute;
@@ -1318,10 +1349,11 @@ body {
     .message-timestamp-top {
       position: absolute;
       @include flex-center(row);
-			height: font-size(small);
+			height: 11px;
       bottom: 100%;
       left: 0;
       right: 0;
+			padding: 0;
 
       .timestamp-date {
         color: $text-chat;

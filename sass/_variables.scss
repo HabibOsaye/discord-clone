@@ -22,7 +22,6 @@ $secondary-tooltip: #18191c;
 $text-link: #0b9ac9;
 $text-normal: #dcddde;
 $text-mute: #b9bbbe;
-// $text-mute: yellow;
 $text-chat: #72767d;
 $text-active: #fff;
 $channel-default: #8e9297;
@@ -55,6 +54,7 @@ $font-size: (
 }
 
 // font-weight
+
 $font-weight: (
 	"light": 300,
   "normal": 400,
@@ -77,3 +77,37 @@ $border-bottom-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 
 // transition
 
 $transition-tooltip: cubic-bezier(.57, -0.3, .38, 1.32);
+
+
+// ****** @MIXIN ****** //
+
+// center container
+
+@mixin flex-center($flex-direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $flex-direction;
+}
+
+// transform: rotate() | prefix
+
+@mixin transform-rotate($value) {
+  transform: rotate($value);
+  -webkit-transform: rotate($value);
+  -moz-transform: rotate($value);
+  -o-transform: rotate($value);
+  -ms-transform: rotate($value);
+}
+
+// transform: scale() | prefix
+
+@mixin transform-scale($value) {
+  transform: scale($value);
+  -webkit-transform: scale($value);
+  -moz-transform: scale($value);
+  -o-transform: scale($value);
+  -ms-transform: scale($value);
+}
+
+// ******************** //

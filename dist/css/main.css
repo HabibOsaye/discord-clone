@@ -53,6 +53,19 @@ span {
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background: #202225;
+}
+
 .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +277,7 @@ span {
 }
 
 .badge-online {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;
@@ -277,7 +290,7 @@ span {
 }
 
 .badge-idle {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;
@@ -290,7 +303,7 @@ span {
 }
 
 .badge-do-not-disturb {
-  position: absolute;
+  position: absolute !important;
   display: block;
   width: 10px;
   height: 10px;
@@ -332,6 +345,85 @@ body {
   height: 100vh;
   overflow: hidden;
   line-height: 20px;
+}
+
+[data-tooltip-status] {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
+[data-tooltip-status]::before {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  -webkit-transition: all 50ms ease;
+  transition: all 50ms ease;
+}
+
+[data-tooltip-status]::after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transform: scale(20%);
+  -webkit-transform: scale(20%);
+  -moz-transform: scale(20%);
+  -o-transform: scale(20%);
+  -ms-transform: scale(20%);
+  -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+  transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32), -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
+}
+
+[data-tooltip-status]:hover::before {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 8px;
+  width: 8px;
+  background-color: #18191c;
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 4px);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+[data-tooltip-status]:hover::after {
+  position: absolute;
+  display: block;
+  content: attr(data-tooltip-status);
+  color: #dcddde;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #18191c;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 21ch;
+  line-height: 1rem;
+  padding: 9px 10px;
+  border-radius: 6px;
+  margin: 0 16px;
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 8px);
+  transform: scale(100%);
+  -webkit-transform: scale(100%);
+  -moz-transform: scale(100%);
+  -o-transform: scale(100%);
+  -ms-transform: scale(100%);
 }
 
 [data-tooltip-top] {
@@ -2160,10 +2252,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 0.75rem;
+  height: 11px;
   bottom: 100%;
   left: 0;
   right: 0;
+  padding: 0;
 }
 
 .message-container .message-item .message-timestamp-top .timestamp-date {
