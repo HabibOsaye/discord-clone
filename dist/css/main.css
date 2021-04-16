@@ -1803,9 +1803,28 @@ body {
 
 .chat-viewbox {
   position: relative;
-  padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
   background-color: #36393f;
-  max-height: calc(100vh - 48px);
+  padding-left: 16px;
   overflow: hidden;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
@@ -1816,10 +1835,11 @@ body {
 }
 
 .chat-viewbox .container {
-  max-height: calc(100vh - 48px - 44px - 23px);
-  padding-top: 64px;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .chat-unread-banner {
@@ -1904,12 +1924,12 @@ body {
 }
 
 .chat-input-container {
-  position: absolute;
-  height: 44px;
-  left: 16px;
-  right: 18px;
-  bottom: 24px;
-  z-index: 2;
+  width: 100%;
+  padding-right: 16px;
+  padding-bottom: 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .chat-text-input {
@@ -1930,7 +1950,7 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #40444b;
-  height: 100%;
+  height: 44px;
   padding: 8px;
   padding-right: 4px;
   border-radius: 8px;
@@ -2024,11 +2044,50 @@ body {
   -ms-transform: scale(110%);
 }
 
-.messages {
+.message-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 64px;
   padding-right: 12px;
 }
 
-.messages .message-item {
+.message-container .default {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  justify-self: flex-end;
+}
+
+.message-container .default .default-header {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.message-container .default .default-text {
+  color: #b9bbbe;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.message-container .message-item {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2050,11 +2109,13 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   color: #fff;
-  padding: 18px 0;
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 20px;
   padding-right: 48px;
 }
 
-.messages .message-item .message-options {
+.message-container .message-item .message-options {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2076,15 +2137,15 @@ body {
   visibility: hidden;
 }
 
-.messages .message-item .message-options .btn {
+.message-container .message-item .message-options .btn {
   color: #b9bbbe;
 }
 
-.messages .message-item .message-options .btn:hover .btn-icon {
+.message-container .message-item .message-options .btn:hover .btn-icon {
   color: #dcddde;
 }
 
-.messages .message-item .message-timestamp-top {
+.message-container .message-item .message-timestamp-top {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2099,12 +2160,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 0.75rem;
   bottom: 100%;
   left: 0;
   right: 0;
 }
 
-.messages .message-item .message-timestamp-top .timestamp-date {
+.message-container .message-item .message-timestamp-top .timestamp-date {
   color: #72767d;
   font-size: 0.75rem;
   font-weight: 600;
@@ -2115,7 +2177,7 @@ body {
           flex: 0 0 auto;
 }
 
-.messages .message-item .message-timestamp-top .hrt-bar {
+.message-container .message-item .message-timestamp-top .hrt-bar {
   display: block;
   height: 1px;
   background-color: #40444b;
@@ -2124,7 +2186,7 @@ body {
           flex: 1 0 auto;
 }
 
-.messages .message-item .message .message-header {
+.message-container .message-item .message .message-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2144,35 +2206,41 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  color: #fff;
   margin-bottom: 4px;
 }
 
-.messages .message-item .message .message-header .username {
+.message-container .message-item .message .message-header .username {
   line-height: 0.85;
   font-size: 1rem;
   font-weight: 500;
   margin-right: 8px;
 }
 
-.messages .message-item .message .message-header .message-timestamp {
+.message-container .message-item .message .message-header .message-timestamp {
   color: #72767d;
   line-height: 1;
   font-size: 0.75rem;
   font-weight: 500;
 }
 
-.messages .message-item .message .message-text {
+.message-container .message-item .message .message-text {
   color: #dcddde;
   line-height: 1.5;
   white-space: pre-line;
 }
 
-.messages .message-item:hover .message-options {
+.message-container .message-item:hover .message-options {
   visibility: visible;
 }
 
-.messages .message-sender {
+.message-container .message-sender {
   margin-right: 16px;
+}
+
+.message-container > .message-item:nth-child(2) .timestamp-date {
+  display: none;
+  visibility: none;
 }
 
 .room-activity {

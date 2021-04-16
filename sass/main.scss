@@ -991,7 +991,6 @@ body {
   flex: 1 1 50%;
 
   .room-title {
-    // display: inline-block;
     color: #fff;
     font-weight: font-weight(semibold);
     line-height: 20px;
@@ -1106,20 +1105,21 @@ body {
 
 .chat-viewbox {
   position: relative;
-  padding-left: 16px;
+  @include flex-center(column);
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
   background-color: #36393f;
-  max-height: calc(100vh - 48px);
+  padding-left: 16px;
   overflow: hidden;
 
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 
   .container {
-    max-height: calc(100vh - 48px - 44px - 23px);
-    padding-top: 64px;
-    // border: 1px solid orange;
     overflow-y: scroll;
     overflow-x: hidden;
+    flex: 1 1 auto;
   }
 }
 
@@ -1184,23 +1184,17 @@ body {
 // chat input
 
 .chat-input-container {
-  position: absolute;
-  height: 44px;
-  // left: 240px + 72px + 16px;
-  // right: 240px + 18px;
-  // bottom: 24px;
-  left: 16px;
-  right: 18px;
-  // top: calc(100vh - 24px);
-  bottom: 24px;
-  z-index: 2;
+  width: 100%;
+  padding-right: 16px;
+  padding-bottom: 24px;
+  flex: 0 0 auto;
 }
 
 .chat-text-input {
   @include flex-center(row);
   justify-content: flex-start;
   background-color: #40444b;
-  height: 100%;
+  height: 44px;
   padding: 8px;
   padding-right: 4px;
   border-radius: 8px;
@@ -1264,9 +1258,33 @@ body {
 
 // messages
 
-.messages {
-  // padding-top: 200px;
+.message-container {
+  @include flex-center(column);
+  justify-content: flex-start;
+  padding-top: 64px;
   padding-right: 12px;
+
+  .default {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding-top: 16px;
+		padding-bottom: 16px;
+    justify-self: flex-end;
+
+    .default-header {
+      font-size: 2rem;
+      font-weight: font-weight(bold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .default-text {
+      color: $text-mute;
+      font-size: font-size(medium);
+      font-weight: font-weight(normal);
+    }
+  }
 
   .message-item {
     position: relative;
@@ -1274,9 +1292,10 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     color: #fff;
-    padding: 18px 0;
+		width: 100%;
+    padding-top: 20px;
+		margin-bottom: 20px;
     padding-right: 48px;
-    // border: 1px solid rgb(237, 3, 229);
 
     .message-options {
       position: absolute;
@@ -1289,7 +1308,7 @@ body {
 
       .btn {
         color: $icon-state-normal;
-        
+
         &:hover .btn-icon {
           color: $icon-state-hover;
         }
@@ -1299,10 +1318,10 @@ body {
     .message-timestamp-top {
       position: absolute;
       @include flex-center(row);
+			height: font-size(small);
       bottom: 100%;
       left: 0;
       right: 0;
-      // background-color: royalblue;
 
       .timestamp-date {
         color: $text-chat;
@@ -1317,7 +1336,6 @@ body {
         display: block;
         height: 1px;
         background-color: #40444b;
-        ;
         flex: 1 0 auto;
       }
     }
@@ -1328,16 +1346,14 @@ body {
         @include flex-center(row);
         justify-content: flex-start;
         align-items: flex-end;
+				color: #fff;
         margin-bottom: 4px;
-        // background-color: rgb(250, 129, 0);
 
         .username {
-          // color: #fff;
           line-height: 0.85;
           font-size: font-size(default);
           font-weight: font-weight(medium);
           margin-right: 8px;
-          // background-color: rgb(0, 0, 31);
         }
 
         .message-timestamp {
@@ -1345,7 +1361,6 @@ body {
           line-height: 1;
           font-size: font-size(small);
           font-weight: font-weight(medium);
-          // background-color: rgb(1, 1, 118);
         }
       }
 
@@ -1353,7 +1368,6 @@ body {
         color: $text-normal;
         line-height: 1.5;
         white-space: pre-line;
-        // word-wrap: break-word;
       }
     }
 
@@ -1366,6 +1380,14 @@ body {
 
   .message-sender {
     margin-right: 16px;
+  }
+
+  > .message-item:nth-child(2) {
+		
+    & .timestamp-date {
+      display: none;
+      visibility: none;
+    }
   }
 }
 
@@ -1427,7 +1449,6 @@ body {
       font-weight: font-weight(semibold);
     }
   }
-
 }
 
 .room-member-details {
