@@ -2310,6 +2310,11 @@ body {
   margin-right: 8px;
 }
 
+.message-container .message-item .message .message-header .username:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .message-container .message-item .message .message-header .message-timestamp {
   color: #72767d;
   line-height: 1;
