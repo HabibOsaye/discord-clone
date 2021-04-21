@@ -373,11 +373,11 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
+  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  -ms-transform: scale(0.2);
   -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
@@ -420,11 +420,11 @@ body {
   opacity: 1;
   visibility: visible;
   bottom: calc(100% + 8px);
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
 }
 
 [data-tooltip-top] {
@@ -452,11 +452,11 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
+  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  -ms-transform: scale(0.2);
   -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
@@ -499,11 +499,11 @@ body {
   opacity: 1;
   visibility: visible;
   bottom: calc(100% + 6px);
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
 }
 
 [data-tooltip-bottom] {
@@ -531,11 +531,11 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
+  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  -ms-transform: scale(0.2);
   -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
   transition: opacity 50ms ease-out, transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
@@ -584,11 +584,11 @@ body {
   opacity: 1;
   visibility: visible;
   top: calc(100% + 8px);
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
 }
 
 [data-tooltip-top-delay] {
@@ -618,11 +618,11 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
-  transform: scale(20%);
-  -webkit-transform: scale(20%);
-  -moz-transform: scale(20%);
-  -o-transform: scale(20%);
-  -ms-transform: scale(20%);
+  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -o-transform: scale(0.2);
+  -ms-transform: scale(0.2);
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
   -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms cubic-bezier(0.57, -0.3, 0.38, 1.32);
@@ -673,11 +673,11 @@ body {
   bottom: calc(100% + 7px);
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
-  transform: scale(100%);
-  -webkit-transform: scale(100%);
-  -moz-transform: scale(100%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
 }
 
 .body-wrapper {
@@ -2130,11 +2130,11 @@ body {
 .chat-text-input .emoji-icon:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
-  transform: scale(110%);
-  -webkit-transform: scale(110%);
-  -moz-transform: scale(110%);
-  -o-transform: scale(110%);
-  -ms-transform: scale(110%);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
 }
 
 .message-container {

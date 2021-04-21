@@ -47,7 +47,7 @@ body {
     opacity: 0;
     visibility: hidden;
     z-index: 10;
-    @include transform-scale(20%);
+    @include transform-scale(0.2);
     transition:
       opacity 50ms ease-out,
       transform 50ms $transition-tooltip;
@@ -86,7 +86,7 @@ body {
     opacity: 1;
     visibility: visible;
     bottom: calc(100% + 8px);
-    @include transform-scale(100%);
+    @include transform-scale(1);
   }
 }
 
@@ -113,7 +113,7 @@ body {
     opacity: 0;
     visibility: hidden;
     z-index: 10;
-    @include transform-scale(20%);
+    @include transform-scale(0.2);
     transition:
       opacity 50ms ease-out,
       transform 50ms $transition-tooltip;
@@ -152,7 +152,7 @@ body {
     opacity: 1;
     visibility: visible;
     bottom: calc(100% + 6px);
-    @include transform-scale(100%);
+    @include transform-scale(1);
   }
 }
 
@@ -179,7 +179,7 @@ body {
     opacity: 0;
     visibility: hidden;
     z-index: 10;
-    @include transform-scale(20%);
+    @include transform-scale(0.2);
     transition:
       opacity 50ms ease-out,
       transform 50ms $transition-tooltip;
@@ -219,7 +219,7 @@ body {
     opacity: 1;
     visibility: visible;
     top: calc(100% + 8px);
-    @include transform-scale(100%);
+    @include transform-scale(1);
   }
 }
 
@@ -248,7 +248,7 @@ body {
     opacity: 0;
     visibility: hidden;
     z-index: 10;
-    @include transform-scale(20%);
+    @include transform-scale(0.2);
     transition-delay: .5s;
     transition:
       opacity 50ms ease-out,
@@ -291,7 +291,7 @@ body {
     visibility: visible;
     bottom: calc(100% + 7px);
     transition-delay: .5s;
-    @include transform-scale(100%);
+    @include transform-scale(1);
   }
 }
 
@@ -1273,7 +1273,7 @@ body {
 
     &:hover {
       filter: grayscale(0);
-      @include transform-scale(110%);
+      @include transform-scale(1.1);
     }
   }
 }
