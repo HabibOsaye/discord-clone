@@ -392,7 +392,7 @@ body {
   position: absolute;
   opacity: 0;
   visibility: hidden;
-  @include transform-scale(20%);
+  @include transform-scale(0.2);
   transition:
     opacity 50ms ease-out,
     transform 50ms $transition-tooltip;
@@ -496,7 +496,7 @@ body {
       opacity: 1;
       z-index: 3;
       visibility: visible;
-      @include transform-scale(100%);
+      @include transform-scale(1);
 
       &::before {
         position: absolute;
